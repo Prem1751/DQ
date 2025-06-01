@@ -18,6 +18,7 @@ public class SimpleRunMovement : MonoBehaviour
 
     private Vector2 movementInput;
     private bool isRunning;
+    private bool movementEnabled = true; // เพิ่มตัวแปรควบคุมการเคลื่อนที่
 
     private void Awake()
     {
@@ -28,6 +29,8 @@ public class SimpleRunMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!movementEnabled) return; // ไม่ประมวลผลถ้าเคลื่อนที่ไม่ได้
+
         // รับค่าการเคลื่อนที่
         movementInput.x = Input.GetAxisRaw("Horizontal");
         movementInput.y = Input.GetAxisRaw("Vertical");
@@ -35,10 +38,11 @@ public class SimpleRunMovement : MonoBehaviour
         // ตรวจสอบการกดปุ่มวิ่ง
         isRunning = Input.GetKey(runKey);
 
-        // พลิก Sprite ตามทิศทาง
         if (flipSprite && movementInput.x != 0)
         {
-            spriteRenderer.flipX = movementInput.x < 0;
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * (movementInput.x > 0 ? 1 : -1);
+            transform.localScale = scale;
         }
 
         // อัปเดต Animation
@@ -47,6 +51,12 @@ public class SimpleRunMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!movementEnabled) // หยุดเคลื่อนที่ถ้าถูกปิด
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         // คำนวณความเร็วปัจจุบัน
         float currentSpeed = isRunning ? runSpeed : walkSpeed;
 
@@ -58,10 +68,12 @@ public class SimpleRunMovement : MonoBehaviour
     {
         if (animator == null) return;
 
-        animator.SetFloat("Horizontal", movementInput.x);
-        animator.SetFloat("Vertical", movementInput.y);
-        animator.SetFloat("Speed", movementInput.magnitude);
-        animator.SetBool("IsRunning", isRunning);
+        // อัปเดตพารามิเตอร์ Animator
+        float speed = movementEnabled ? movementInput.magnitude : 0;
+        animator.SetFloat("Horizontal", movementEnabled ? movementInput.x : 0);
+        animator.SetFloat("Vertical", movementEnabled ? movementInput.y : 0);
+        animator.SetFloat("Speed", speed);
+        animator.SetBool("IsRunning", movementEnabled && isRunning);
 
         // เก็บทิศทางล่าสุดสำหรับ Idle Animation
         if (movementInput.magnitude > 0.1f)
@@ -71,14 +83,29 @@ public class SimpleRunMovement : MonoBehaviour
         }
     }
 
-    // ฟังก์ชันตรวจสอบสถานะ
+    // ฟังก์ชันสำหรับระบบสนทนา (ใหม่)
+    public void SetMovement(bool canMove)
+    {
+        movementEnabled = canMove;
+
+        if (!canMove)
+        {
+            rb.linearVelocity = Vector2.zero; // หยุดการเคลื่อนที่ทันที
+            if (animator != null)
+            {
+                animator.SetFloat("Speed", 0); // รีเซ็ต Animation
+            }
+        }
+    }
+
+    // ฟังก์ชันตรวจสอบสถานะ (เดิม)
     public bool IsMoving()
     {
-        return movementInput.magnitude > 0.1f;
+        return movementEnabled && movementInput.magnitude > 0.1f;
     }
 
     public bool IsRunning()
     {
-        return isRunning;
+        return movementEnabled && isRunning;
     }
 }
