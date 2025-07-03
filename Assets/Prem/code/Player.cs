@@ -14,11 +14,15 @@ public class SimpleRunMovement : MonoBehaviour
     [SerializeField] private string idleBool = "IsIdle";
     [SerializeField] private string walkBool = "IsWalking";
     [SerializeField] private string runBool = "IsRunning";
-    [SerializeField] private string speedParam = "Speed"; // เปลี่ยนจาก float เป็น string เพราะเป็นชื่อพารามิเตอร์
+    [SerializeField] private string speedParam = "Speed";
 
     [Header("Visual Settings")]
     [SerializeField] private bool flipSprite = true;
     [SerializeField] private ParticleSystem runParticles;
+
+    [Header("Map Boundaries")]
+    [SerializeField] private SpriteRenderer[] backgroundSprites; // Assign all background sprites in the inspector
+    [SerializeField] private float edgePadding = 0.5f; // Padding to prevent character from going off-screen
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -30,6 +34,8 @@ public class SimpleRunMovement : MonoBehaviour
     private bool movementEnabled = true;
     private float currentSpeed;
     private bool isFacingRight = true;
+    private float minXBoundary;
+    private float maxXBoundary;
 
     private void Awake()
     {
@@ -38,6 +44,37 @@ public class SimpleRunMovement : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         if (animator == null) animator = GetComponent<Animator>();
+
+        CalculateMapBoundaries();
+    }
+
+    private void CalculateMapBoundaries()
+    {
+        if (backgroundSprites == null || backgroundSprites.Length == 0)
+        {
+            Debug.LogWarning("No background sprites assigned for boundary calculation!");
+            minXBoundary = -Mathf.Infinity;
+            maxXBoundary = Mathf.Infinity;
+            return;
+        }
+
+        // Initialize with first sprite's bounds
+        Bounds combinedBounds = backgroundSprites[0].bounds;
+
+        // Combine bounds of all background sprites
+        for (int i = 1; i < backgroundSprites.Length; i++)
+        {
+            if (backgroundSprites[i] != null)
+            {
+                combinedBounds.Encapsulate(backgroundSprites[i].bounds);
+            }
+        }
+
+        // Calculate boundaries with padding
+        minXBoundary = combinedBounds.min.x + edgePadding;
+        maxXBoundary = combinedBounds.max.x - edgePadding;
+
+        Debug.Log($"Map boundaries calculated: MinX={minXBoundary}, MaxX={maxXBoundary}");
     }
 
     private void Update()
@@ -81,7 +118,19 @@ public class SimpleRunMovement : MonoBehaviour
             (Mathf.Abs(targetSpeed) > 0.1f ? acceleration : deceleration) * Time.fixedDeltaTime
         );
 
-        rb.linearVelocity = new Vector2(currentSpeed, rb.linearVelocity.y);
+        // Calculate new position
+        Vector2 newPosition = rb.position + Vector2.right * currentSpeed * Time.fixedDeltaTime;
+
+        // Clamp position to boundaries
+        newPosition.x = Mathf.Clamp(newPosition.x, minXBoundary, maxXBoundary);
+
+        // Only move if we're not at the boundary or moving away from it
+        if ((newPosition.x > rb.position.x && newPosition.x < maxXBoundary) ||
+            (newPosition.x < rb.position.x && newPosition.x > minXBoundary) ||
+            (newPosition.x == rb.position.x))
+        {
+            rb.MovePosition(newPosition);
+        }
 
         if (runParticles != null)
         {
@@ -99,16 +148,42 @@ public class SimpleRunMovement : MonoBehaviour
         bool isMoving = Mathf.Abs(currentSpeed) > 0.1f;
         float speedPercent = Mathf.Abs(currentSpeed) / (isRunning ? runSpeed : walkSpeed);
 
-        // ตั้งค่า Boolean พารามิเตอร์
         animator.SetBool(idleBool, !isMoving);
         animator.SetBool(walkBool, isMoving && !isRunning);
         animator.SetBool(runBool, isMoving && isRunning);
-
-        // ตั้งค่า Speed parameter สำหรับ blend tree (ถ้ามี)
         animator.SetFloat(speedParam, speedPercent);
     }
 
     public void SetMovement(bool canMove) => movementEnabled = canMove;
     public bool IsMoving() => movementEnabled && Mathf.Abs(horizontalInput) > 0.1f;
     public bool IsRunning() => movementEnabled && isRunning;
+
+    // Call this when you add/remove background sprites at runtime
+    public void UpdateBoundaries()
+    {
+        CalculateMapBoundaries();
+    }
+
+    // Draw boundaries in editor for visualization
+    private void OnDrawGizmosSelected()
+    {
+        if (!Application.isPlaying && backgroundSprites != null && backgroundSprites.Length > 0)
+        {
+            Bounds combinedBounds = backgroundSprites[0].bounds;
+            for (int i = 1; i < backgroundSprites.Length; i++)
+            {
+                if (backgroundSprites[i] != null)
+                {
+                    combinedBounds.Encapsulate(backgroundSprites[i].bounds);
+                }
+            }
+
+            float minX = combinedBounds.min.x + edgePadding;
+            float maxX = combinedBounds.max.x - edgePadding;
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(new Vector3(minX, combinedBounds.min.y - 10, 0), new Vector3(minX, combinedBounds.max.y + 10, 0));
+            Gizmos.DrawLine(new Vector3(maxX, combinedBounds.min.y - 10, 0), new Vector3(maxX, combinedBounds.max.y + 10, 0));
+        }
+    }
 }

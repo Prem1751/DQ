@@ -1014,10 +1014,10 @@ MonoBehaviour:
   runKey: 304
   acceleration: 10
   deceleration: 15
-  idleAnimation: Idle
-  walkAnimation: Walk
-  runAnimation: Run
-  animationTransitionSpeed: 0.1
+  idleBool: IsIdle
+  walkBool: IsWalking
+  runBool: IsRunning
+  speedParam: Speed
   flipSprite: 1
   runParticles: {fileID: 0}
   rb: {fileID: 0}
@@ -2009,8 +2009,8 @@ SceneRoots:
   - {fileID: 2049932131}
   - {fileID: 1738308611}
   - {fileID: 954114493}
+  - {fileID: 700219792}
   - {fileID: 9444729}
   - {fileID: 1847394442}
-  - {fileID: 700219792}
   - {fileID: 2035048416}
   - {fileID: 1736350399}
