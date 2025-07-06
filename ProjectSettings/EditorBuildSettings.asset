@@ -6,31 +6,31 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main/Sence All/main.unity
+    path: Assets/Main/Sence All/day 1/main.unity
     guid: f062f797435b2104a8fe387bd2d51ab4
   - enabled: 1
-    path: Assets/Main/Sence All/start.unity
+    path: Assets/Main/Sence All/day 1/start.unity
     guid: f0107acd906580a45a1a243f3be7ec84
   - enabled: 0
     path: Assets/Prem/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Main/tastRoom/testRoom1.1.unity
+    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.1.unity
     guid: 46f4345f7be26e249ada615520276565
   - enabled: 1
-    path: Assets/Main/tastRoom/testRoom1.2.unity
+    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.2.unity
     guid: 3fb3855f2cfb0ce4b8f2981f871bf0c6
   - enabled: 1
-    path: Assets/Main/tastRoom/testRoom1.3.unity
+    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.3.unity
     guid: 50aeb87e175f8214fa17f7168ae9ddb4
   - enabled: 1
-    path: Assets/Main/tastRoom/testRoom1.4.unity
+    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.4.unity
     guid: c3ea8eec7f14726489f4dfa88b12cd6b
   - enabled: 1
-    path: Assets/Main/Sence All/school1.unity
+    path: Assets/Main/Sence All/day 1/school1.unity
     guid: 70f9a09a53c862840940a8aa8e6b4548
   - enabled: 1
-    path: Assets/Main/Sence All/school2.unity
+    path: Assets/Main/Sence All/day 1/school2.unity
     guid: 8616326e506974842a715f840504f9b3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
