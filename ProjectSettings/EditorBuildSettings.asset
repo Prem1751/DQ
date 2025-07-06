@@ -15,16 +15,16 @@ EditorBuildSettings:
     path: Assets/Prem/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.1.unity
+    path: Assets/Main/Sence All/day 1/testRoom/testRoom1.1.unity
     guid: 46f4345f7be26e249ada615520276565
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.2.unity
+    path: Assets/Main/Sence All/day 1/testRoom/testRoom1.2.unity
     guid: 3fb3855f2cfb0ce4b8f2981f871bf0c6
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.3.unity
+    path: Assets/Main/Sence All/day 1/testRoom/testRoom1.3.unity
     guid: 50aeb87e175f8214fa17f7168ae9ddb4
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/tastRoom/testRoom1.4.unity
+    path: Assets/Main/Sence All/day 1/testRoom/testRoom1.4.unity
     guid: c3ea8eec7f14726489f4dfa88b12cd6b
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school1.unity
