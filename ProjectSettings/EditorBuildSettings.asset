@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school2.unity
     guid: 8616326e506974842a715f840504f9b3
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/testroom2.2.unity
+    guid: 5348f4938fc37c7489094de740d677f2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
