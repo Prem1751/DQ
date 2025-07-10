@@ -703,8 +703,8 @@ MonoBehaviour:
   typingSound: {fileID: 0}
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
-  changeSceneAfterDialogue: 0
-  sceneNameToLoad: 
+  changeSceneAfterDialogue: 1
+  sceneNameToLoad: school2.2.1
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
