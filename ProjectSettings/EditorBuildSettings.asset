@@ -59,6 +59,12 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Main/Sence All/day 2/\u0E1A\u0E49\u0E32\u0E191.unity"
     guid: d56f5c850291a624eb98cbea605f4e93
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/cafe.unity
+    guid: c43f98eb3a71afb46b57cb48b865f93b
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/canteen.unity
+    guid: 08aeac65ed723724083d868319e837d4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
