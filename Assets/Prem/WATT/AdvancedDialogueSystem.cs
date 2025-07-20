@@ -26,11 +26,29 @@ public class DialogueLine
     [Tooltip("ข้อความตัวเลือกต่างๆ")]
     public string[] choices;
 
-    [Tooltip("บรรทัดต่อไปสำหรับแต่ละตัวเลือก (ใส่ -1 เพื่อจบบทสนทนา)")]
+    [Tooltip("บรรทัดต่อไปสำหรับแต่ละตัวเลือก")]
     public int[] choiceLeadsTo;
 
-    [Tooltip("บทสนทนาหลังเลือกตัวเลือกนี้ (จะใช้แทน choiceLeadsTo ถ้ามีการกำหนด)")]
+    [Tooltip("บทสนทนาหลังเลือกตัวเลือกนี้")]
     public string postChoiceDialogue;
+
+    [Tooltip("เปลี่ยนฉากหลังจากบทสนทนานี้หรือไม่")]
+    public bool changeSceneAfterThis;
+
+    [Tooltip("ชื่อฉากที่จะเปลี่ยน")]
+    public string sceneToLoad;
+
+    [Tooltip("ดีเลย์ก่อนเปลี่ยนฉาก (วินาที)")]
+    public float sceneChangeDelay = 1f;
+
+    [Tooltip("ใช้ Fade Animation เมื่อเปลี่ยนฉากหรือไม่")]
+    public bool useFadeEffect = true;
+
+    [Tooltip("สี Fade Effect")]
+    public Color fadeColor = Color.black;
+
+    [Tooltip("ระยะเวลา Fade (วินาที)")]
+    public float fadeDuration = 1f;
 }
 
 public class AdvancedDialogueSystem : MonoBehaviour
@@ -40,6 +58,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Image speakerImage;
+    public Image fadeOverlay;
 
     [Header("การตั้งค่าบทสนทนา")]
     public string defaultNpcName = "NPC";
@@ -67,10 +86,6 @@ public class AdvancedDialogueSystem : MonoBehaviour
     public TextMeshProUGUI[] choiceTexts;
     public int[] choiceScores;
 
-    [Header("การจัดการฉาก")]
-    public string[] sceneNamesForChoices;
-    public float sceneChangeDelay = 1f;
-
     // ตัวแปรภายใน
     private bool isInRange = false;
     private bool isDialogueActive = false;
@@ -79,11 +94,24 @@ public class AdvancedDialogueSystem : MonoBehaviour
     private Vector3 originalScale;
     private AudioSource audioSource;
     private int lastChoiceIndex = -1;
+    private bool waitingForSceneChange = false;
 
     private void Start()
     {
+        InitializeDialogueSystem();
+    }
+
+    private void InitializeDialogueSystem()
+    {
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(false);
+
+        // ตั้งค่า Fade Overlay
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, 0);
+            fadeOverlay.gameObject.SetActive(false);
+        }
 
         originalScale = speakerImage.transform.localScale;
         audioSource = GetComponent<AudioSource>();
@@ -93,38 +121,43 @@ public class AdvancedDialogueSystem : MonoBehaviour
             audioSource.playOnAwake = false;
         }
 
-        // ตั้งค่าปุ่มตัวเลือก
+        SetupChoiceButtons();
+    }
+
+    private void SetupChoiceButtons()
+    {
         for (int i = 0; i < choiceButtons.Length; i++)
         {
             int choiceIndex = i;
             choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
         }
-
-        // ตรวจสอบความยาวของอาร์เรย์ชื่อฉาก
-        if (sceneNamesForChoices == null || sceneNamesForChoices.Length != choiceButtons.Length)
-        {
-            sceneNamesForChoices = new string[choiceButtons.Length];
-        }
     }
 
     private void Update()
     {
+        if (waitingForSceneChange) return;
+
         CheckPlayerInRange();
 
         if (isInRange && Input.GetKeyDown(interactKey))
         {
-            if (!isDialogueActive)
-            {
-                StartDialogue();
-            }
-            else if (isTyping)
-            {
-                CompleteSentence();
-            }
-            else
-            {
-                NextLine();
-            }
+            HandleDialogueInput();
+        }
+    }
+
+    private void HandleDialogueInput()
+    {
+        if (!isDialogueActive)
+        {
+            StartDialogue();
+        }
+        else if (isTyping)
+        {
+            CompleteSentence();
+        }
+        else
+        {
+            NextLine();
         }
     }
 
@@ -150,10 +183,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
         dialoguePanel.SetActive(true);
         DisplayLine(dialogueLines[currentLineIndex]);
 
-        if (dialogueOpenSound != null)
-        {
-            audioSource.PlayOneShot(dialogueOpenSound);
-        }
+        PlaySoundEffect(dialogueOpenSound);
     }
 
     private void DisplayLine(DialogueLine line)
@@ -166,10 +196,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
             StartCoroutine(PopImageEffect());
         }
 
-        if (line.voiceOver != null)
-        {
-            audioSource.PlayOneShot(line.voiceOver);
-        }
+        PlaySoundEffect(line.voiceOver);
 
         if (useTypingEffect)
         {
@@ -178,15 +205,13 @@ public class AdvancedDialogueSystem : MonoBehaviour
         else
         {
             dialogueText.text = line.text;
+            CheckForImmediateSceneChange();
         }
     }
 
     private IEnumerator PopImageEffect()
     {
-        if (popSound != null)
-        {
-            audioSource.PlayOneShot(popSound);
-        }
+        PlaySoundEffect(popSound);
 
         float timer = 0f;
         Vector3 targetScale = originalScale * popScale;
@@ -220,13 +245,37 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
             if (typingSound != null && char.IsLetterOrDigit(letter))
             {
-                audioSource.PlayOneShot(typingSound);
+                PlaySoundEffect(typingSound);
             }
 
             yield return new WaitForSeconds(typingSpeed);
         }
 
         isTyping = false;
+        CheckForImmediateSceneChange();
+    }
+
+    private void CheckForImmediateSceneChange()
+    {
+        if (!isTyping && dialogueLines[currentLineIndex].changeSceneAfterThis)
+        {
+            waitingForSceneChange = true;
+            StartCoroutine(ChangeSceneWithFade(
+                dialogueLines[currentLineIndex].sceneToLoad,
+                dialogueLines[currentLineIndex].sceneChangeDelay,
+                dialogueLines[currentLineIndex].useFadeEffect,
+                dialogueLines[currentLineIndex].fadeColor,
+                dialogueLines[currentLineIndex].fadeDuration
+            ));
+        }
+    }
+
+    private void PlaySoundEffect(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 
     private void CompleteSentence()
@@ -235,13 +284,12 @@ public class AdvancedDialogueSystem : MonoBehaviour
         dialogueText.text = dialogueLines[currentLineIndex].text;
         speakerImage.transform.localScale = originalScale;
         isTyping = false;
+        CheckForImmediateSceneChange();
     }
 
     private void NextLine()
     {
-        if (dialogueLines[currentLineIndex].hasChoices &&
-            dialogueLines[currentLineIndex].choices != null &&
-            dialogueLines[currentLineIndex].choices.Length > 0)
+        if (dialogueLines[currentLineIndex].hasChoices)
         {
             ShowChoices(dialogueLines[currentLineIndex].choices);
             return;
@@ -252,6 +300,18 @@ public class AdvancedDialogueSystem : MonoBehaviour
         if (currentLineIndex < dialogueLines.Length)
         {
             DisplayLine(dialogueLines[currentLineIndex]);
+
+            if (dialogueLines[currentLineIndex].changeSceneAfterThis)
+            {
+                waitingForSceneChange = true;
+                StartCoroutine(ChangeSceneWithFade(
+                    dialogueLines[currentLineIndex].sceneToLoad,
+                    dialogueLines[currentLineIndex].sceneChangeDelay,
+                    dialogueLines[currentLineIndex].useFadeEffect,
+                    dialogueLines[currentLineIndex].fadeColor,
+                    dialogueLines[currentLineIndex].fadeDuration
+                ));
+            }
         }
         else
         {
@@ -266,14 +326,12 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
         for (int i = 0; i < choiceButtons.Length; i++)
         {
-            if (i < choices.Length)
+            bool shouldActivate = i < choices.Length;
+            choiceButtons[i].gameObject.SetActive(shouldActivate);
+
+            if (shouldActivate)
             {
-                choiceButtons[i].gameObject.SetActive(true);
                 choiceTexts[i].text = choices[i];
-            }
-            else
-            {
-                choiceButtons[i].gameObject.SetActive(false);
             }
         }
     }
@@ -292,20 +350,84 @@ public class AdvancedDialogueSystem : MonoBehaviour
         // ตรวจสอบว่ามีบทสนทนาหลังเลือกหรือไม่
         if (!string.IsNullOrEmpty(dialogueLines[currentLineIndex].postChoiceDialogue))
         {
-            // แสดงบทสนทนาหลังเลือก
+            // แสดงบทสนทนาหลังเลือก (เหมือนภาพตัวอย่าง)
             dialoguePanel.SetActive(true);
-            dialogueText.text = dialogueLines[currentLineIndex].postChoiceDialogue;
-            isTyping = false;
+
+            if (useTypingEffect)
+            {
+                StartCoroutine(TypePostChoiceDialogue(dialogueLines[currentLineIndex].postChoiceDialogue));
+            }
+            else
+            {
+                dialogueText.text = dialogueLines[currentLineIndex].postChoiceDialogue;
+                CheckForPostChoiceSceneChange();
+            }
             return;
         }
 
-        // ตรวจสอบว่ามีการกำหนดบรรทัดต่อไปหรือไม่
+        ProcessChoiceSelection(choiceIndex);
+    }
+
+    private IEnumerator TypePostChoiceDialogue(string text)
+    {
+        isTyping = true;
+        dialogueText.text = "";
+
+        foreach (char letter in text.ToCharArray())
+        {
+            dialogueText.text += letter;
+
+            if (typingSound != null && char.IsLetterOrDigit(letter))
+            {
+                PlaySoundEffect(typingSound);
+            }
+
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTyping = false;
+        CheckForPostChoiceSceneChange();
+    }
+
+    private void CheckForPostChoiceSceneChange()
+    {
+        if (dialogueLines[currentLineIndex].changeSceneAfterThis)
+        {
+            waitingForSceneChange = true;
+            StartCoroutine(ChangeSceneAfterPostChoiceDialogue());
+        }
+    }
+
+    private IEnumerator ChangeSceneAfterPostChoiceDialogue()
+    {
+        // รอจนกว่าผู้เล่นจะกดเพื่อปิดบทสนทนา
+        while (dialoguePanel.activeSelf)
+        {
+            if (Input.GetKeyDown(interactKey))
+            {
+                break;
+            }
+            yield return null;
+        }
+
+        // เปลี่ยนฉาก
+        yield return ChangeSceneWithFade(
+            dialogueLines[currentLineIndex].sceneToLoad,
+            dialogueLines[currentLineIndex].sceneChangeDelay,
+            dialogueLines[currentLineIndex].useFadeEffect,
+            dialogueLines[currentLineIndex].fadeColor,
+            dialogueLines[currentLineIndex].fadeDuration
+        );
+    }
+
+    private void ProcessChoiceSelection(int choiceIndex)
+    {
         if (dialogueLines[currentLineIndex].choiceLeadsTo != null &&
             choiceIndex < dialogueLines[currentLineIndex].choiceLeadsTo.Length)
         {
             int nextLine = dialogueLines[currentLineIndex].choiceLeadsTo[choiceIndex];
 
-            if (nextLine == -1) // จบบทสนทนา
+            if (nextLine == -1)
             {
                 EndDialogue();
                 return;
@@ -315,36 +437,71 @@ public class AdvancedDialogueSystem : MonoBehaviour
                 currentLineIndex = nextLine;
                 dialoguePanel.SetActive(true);
                 DisplayLine(dialogueLines[currentLineIndex]);
+
+                if (dialogueLines[currentLineIndex].changeSceneAfterThis)
+                {
+                    waitingForSceneChange = true;
+                    StartCoroutine(ChangeSceneWithFade(
+                        dialogueLines[currentLineIndex].sceneToLoad,
+                        dialogueLines[currentLineIndex].sceneChangeDelay,
+                        dialogueLines[currentLineIndex].useFadeEffect,
+                        dialogueLines[currentLineIndex].fadeColor,
+                        dialogueLines[currentLineIndex].fadeDuration
+                    ));
+                }
                 return;
             }
         }
 
-        // ตรวจสอบว่าต้องการเปลี่ยนฉากหรือไม่
-        if (choiceIndex < sceneNamesForChoices.Length &&
-            !string.IsNullOrEmpty(sceneNamesForChoices[choiceIndex]))
+        // ไม่มีอะไรกำหนด - ไปบรรทัดต่อไป
+        currentLineIndex++;
+        if (currentLineIndex < dialogueLines.Length)
         {
-            StartCoroutine(ChangeSceneAfterDelay(sceneNamesForChoices[choiceIndex]));
+            dialoguePanel.SetActive(true);
+            DisplayLine(dialogueLines[currentLineIndex]);
+
+            if (dialogueLines[currentLineIndex].changeSceneAfterThis)
+            {
+                waitingForSceneChange = true;
+                StartCoroutine(ChangeSceneWithFade(
+                    dialogueLines[currentLineIndex].sceneToLoad,
+                    dialogueLines[currentLineIndex].sceneChangeDelay,
+                    dialogueLines[currentLineIndex].useFadeEffect,
+                    dialogueLines[currentLineIndex].fadeColor,
+                    dialogueLines[currentLineIndex].fadeDuration
+                ));
+            }
         }
         else
         {
-            // ไม่มีอะไรกำหนด - ไปบรรทัดต่อไป
-            currentLineIndex++;
-            if (currentLineIndex < dialogueLines.Length)
-            {
-                dialoguePanel.SetActive(true);
-                DisplayLine(dialogueLines[currentLineIndex]);
-            }
-            else
-            {
-                EndDialogue();
-            }
+            EndDialogue();
         }
     }
 
-    private IEnumerator ChangeSceneAfterDelay(string sceneName)
+    private IEnumerator ChangeSceneWithFade(string sceneName, float delay, bool useFade, Color fadeColor, float fadeDuration)
     {
         EndDialogue();
-        yield return new WaitForSeconds(sceneChangeDelay);
+
+        yield return new WaitForSeconds(delay);
+
+        if (useFade && fadeOverlay != null)
+        {
+            fadeOverlay.gameObject.SetActive(true);
+            fadeOverlay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 0);
+
+            // Fade Out
+            float timer = 0f;
+            while (timer < fadeDuration)
+            {
+                timer += Time.deltaTime;
+                float alpha = Mathf.Lerp(0, 1, timer / fadeDuration);
+                fadeOverlay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha);
+                yield return null;
+            }
+
+            fadeOverlay.color = new Color(fadeColor.r, fadeColor.g, fadeColor.b, 1);
+        }
+
         SceneManager.LoadScene(sceneName);
     }
 
@@ -353,11 +510,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
         isDialogueActive = false;
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(false);
-
-        if (dialogueCloseSound != null)
-        {
-            audioSource.PlayOneShot(dialogueCloseSound);
-        }
+        PlaySoundEffect(dialogueCloseSound);
     }
 
     private void OnDrawGizmosSelected()
@@ -366,7 +519,6 @@ public class AdvancedDialogueSystem : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }
 
-    // ฟังก์ชันสำหรับตรวจสอบตัวเลือกล่าสุด
     public int GetLastChoiceIndex()
     {
         return lastChoiceIndex;
