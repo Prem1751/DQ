@@ -1789,7 +1789,7 @@ MonoBehaviour:
   scoreForCorrectAnswer: 10
   scoreForPartialAnswer: 5
   feedbackDisplayTime: 2
-  nextSceneName: Q3
+  nextSceneName: testRoom1.4
 --- !u!223 &1833124597
 Canvas:
   m_ObjectHideFlags: 0

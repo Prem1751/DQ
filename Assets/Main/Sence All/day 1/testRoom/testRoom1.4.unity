@@ -307,7 +307,7 @@ MonoBehaviour:
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
   sceneNameToLoad: canteen
-  sceneTransitionDelay: 1
+  sceneTransitionDelay: 1.5
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   useScoreBasedTransition: 0

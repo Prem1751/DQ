@@ -381,7 +381,7 @@ Transform:
   m_GameObject: {fileID: 202821416}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7, y: -1.806775, z: 0}
+  m_LocalPosition: {x: 10.15, y: -1.806775, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -406,7 +406,7 @@ MonoBehaviour:
   speakerImage: {fileID: 425883547}
   defaultNpcName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
   dialogueLines:
-  - text: "\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E19\u0E30\u0E04\u0E19\u0E04\u0E19\u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D(\u0E04\u0E34\u0E14\u0E43\u0E19\u0E43\u0E08)"
+  - text: "\u0E04\u0E19\u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D?"
     characterName: "\u0E0B\u0E35\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -420,32 +420,20 @@ MonoBehaviour:
     characterName: "\u0E40\u0E0A\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E2D\u0E4B\u0E2D \u0E40\u0E0A\u0E19\u0E17\u0E35\u0E48\u0E2D\u0E22\u0E39\u0E48\u0E2B\u0E49\u0E2D\u0E07\u0E2A\u0E32\u0E21\u0E19\u0E35\u0E48\u0E40\u0E2D\u0E07"
+  - text: "\u0E2D\u0E4B\u0E2D \u0E40\u0E0A\u0E19\u0E17\u0E35\u0E48\u0E2D\u0E22\u0E39\u0E48\u0E2B\u0E49\u0E2D\u0E07\u0E1A\u0E35\u0E19\u0E35\u0E48\u0E40\u0E2D\u0E07"
     characterName: "\u0E0B\u0E35\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E2D\u0E4B\u0E2D \u0E40\u0E0A\u0E19\u0E17\u0E35\u0E48\u0E2D\u0E22\u0E39\u0E48\u0E2B\u0E49\u0E2D\u0E07\u0E2A\u0E32\u0E21\u0E19\u0E35\u0E48\u0E40\u0E2D\u0E07"
+  - text: "*\u0E04\u0E19\u0E19\u0E35\u0E49\u0E44\u0E07\u0E17\u0E35\u0E48\u0E40\u0E23\u0E32\u0E40\u0E25\u0E48\u0E32\u0E43\u0E2B\u0E49\u0E1F\u0E31\u0E07\u0E1A\u0E48\u0E2D\u0E22\u0E46
+      \u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1F\u0E19\u0E40\u0E23\u0E32*"
+    characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E02\u0E49\u0E32\u0E21\u0E32\u0E01\u0E23\u0E30\u0E0B\u0E34\u0E1A\u0E01\u0E31\u0E1A\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+  - text: "\u0E2B\u0E49\u0E30"
     characterName: "\u0E0B\u0E35\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E17\u0E35\u0E01\u0E31\u0E1A\u0E40\u0E23\u0E32\u0E44\u0E21\u0E48\u0E40\u0E2B\u0E47\u0E19\u0E40\u0E04\u0E22\u0E08\u0E30\u0E40\u0E25\u0E48\u0E32\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E40\u0E0A\u0E19\u0E43\u0E2B\u0E49\u0E1F\u0E31\u0E07\u0E40\u0E25\u0E22(\u0E04\u0E34\u0E14\u0E43\u0E19\u0E43\u0E08)"
-    characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-  - text: "\u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E02\u0E49\u0E32\u0E21\u0E32\u0E01\u0E23\u0E30\u0E0B\u0E34\u0E1A\u0E01\u0E31\u0E1A\u0E0B\u0E34\u0E19"
-    characterName: ???
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-  - text: "\u0E04\u0E19\u0E19\u0E35\u0E49\u0E44\u0E07\u0E17\u0E35\u0E48\u0E40\u0E23\u0E32\u0E40\u0E25\u0E48\u0E32\u0E43\u0E2B\u0E49\u0E1F\u0E31\u0E07\u0E1A\u0E48\u0E2D\u0E22\u0E46
-      \u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1F\u0E19\u0E40\u0E23\u0E32"
-    characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-  - text: ...!
-    characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-  - text: "\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E40\u0E01\u0E47\u0E1A\u0E44\u0E27\u0E40\u0E49\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E25\u0E31\u0E1A\u0E19\u0E30"
+  - text: "\u0E0A\u0E39\u0E48\u0E27! \u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E40\u0E01\u0E47\u0E1A\u0E44\u0E27\u0E40\u0E49\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E25\u0E31\u0E1A\u0E19\u0E30"
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -463,20 +451,21 @@ MonoBehaviour:
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E19\u0E35\u0E48\u0E21\u0E31\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E2D\u0E30\u0E44\u0E23\u0E40\u0E19\u0E35\u0E48\u0E22!?(\u0E04\u0E34\u0E14\u0E43\u0E19\u0E43\u0E08)"
+  - text: "(\u0E19\u0E35\u0E48\u0E21\u0E31\u0E19\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E2D\u0E30\u0E44\u0E23\u0E40\u0E19\u0E35\u0E48\u0E22!?)"
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E01\u0E23\u0E34\u0E4A\u0E07 -\u0E01\u0E23\u0E48\u0E2D\u0E07"
-    characterName: "\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E01\u0E23\u0E30\u0E14\u0E34\u0E48\u0E07\u0E40\u0E23\u0E35\u0E22\u0E01\u0E43\u0E2B\u0E49\u0E40\u0E02\u0E32\u0E49\u0E2B\u0E49\u0E2D\u0E07\u0E2A\u0E2D\u0E1A"
+  - text: "\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E01\u0E23\u0E30\u0E14\u0E34\u0E48\u0E07\u0E40\u0E23\u0E35\u0E22\u0E01\u0E43\u0E2B\u0E49\u0E40\u0E02\u0E32\u0E49\u0E2B\u0E49\u0E2D\u0E07\u0E2A\u0E2D\u0E1A"
+    characterName: "\u0E01\u0E23\u0E34\u0E4A\u0E07 -\u0E01\u0E23\u0E48\u0E2D\u0E07
+      - \u0E01\u0E23\u0E4A\u0E34\u0E07 - \u0E01\u0E23\u0E48\u0E2D\u0E07 "
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
   - text: "\u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E19\u0E30\u0E40\u0E0A\u0E19"
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E19\u0E30\u0E04\u0E23\u0E31\u0E1A"
-    characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
+  - text: "\u0E04\u0E23\u0E31\u0E1A \u0E46 \u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E19\u0E30\u0E04\u0E23\u0E31\u0E1A"
+    characterName: "\u0E40\u0E0A\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
   - text: ...
@@ -494,7 +483,7 @@ MonoBehaviour:
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
-  sceneNameToLoad: 
+  sceneNameToLoad: testRoom1.5
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
@@ -604,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 596103438}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5168586, y: 0.08537215, z: 0}
+  m_LocalPosition: {x: 0.63, y: 0.08537215, z: 0}
   m_LocalScale: {x: 0.125, y: 0.125, z: 0.125}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -902,7 +891,7 @@ Transform:
   m_GameObject: {fileID: 796449296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: -1, z: 0}
+  m_LocalPosition: {x: -7, y: -1.63, z: 0}
   m_LocalScale: {x: 2.8196, y: 2.8196, z: 2.8196}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1227,7 +1216,7 @@ Transform:
   m_GameObject: {fileID: 1676009961}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.07, z: 0}
+  m_LocalPosition: {x: 1.01, y: 0.07, z: 0}
   m_LocalScale: {x: 0.13, y: 0.13, z: 0.13}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1607,7 +1596,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -492.10107, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

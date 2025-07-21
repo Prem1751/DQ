@@ -549,7 +549,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -699.34106, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1344,7 +1344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1368301648}
   - component: {fileID: 1368301647}
-  - component: {fileID: 1368301646}
+  - component: {fileID: 1368301649}
   m_Layer: 0
   m_Name: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
   m_TagString: Untagged
@@ -1352,93 +1352,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1368301646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368301645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 645480aea09c25a47bf29746c80475d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 169157144}
-  nameText: {fileID: 503173548}
-  dialogueText: {fileID: 1540079257}
-  speakerImage: {fileID: 1542375153}
-  defaultNpcName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
-  dialogueLines:
-  - text: "\u0E2D\u0E49\u0E32\u0E21 "
-    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\u0E14\u0E30..\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E01\u0E48\u0E2D\u0E19\u0E19\u0E30\u0E44\u0E2D\u0E23\u0E34\u0E19
-      \r\n"
-    characterName: "\u0E0B\u0E34\u0E19 "
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\u0E2D\u0E49\u0E32\u0E1B\u0E32\u0E01\u0E40\u0E23\u0E47\u0E27 \u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E40\u0E23\u0E32\u0E1B\u0E49\u0E2D\u0E19\u0E43\u0E2B\u0E49\r\n"
-    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19 "
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\u0E2D\u0E30..\u0E2D\u0E37\u0E49\u0E21\r\n"
-    characterName: "\u0E0B\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E41\u0E25\u0E49\u0E27\u0E40\u0E23\u0E32\u0E2D\u0E22\u0E32\u0E01\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E31\u0E1A\u0E0B\u0E34\u0E19\u0E21\u0E32\u0E15\u0E25\u0E2D\u0E14
-      \u0E41\u0E15\u0E48\u0E44\u0E21\u0E48\u0E04\u0E48\u0E2D\u0E22\u0E21\u0E35\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E44\u0E14\u0E49\u0E04\u0E38\u0E22\u0E01\u0E31\u0E19\u0E40\u0E17\u0E48\u0E32\u0E44\u0E23
-      \r"
-    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\"\u0E40\u0E1E\u0E23\u0E32\u0E30\u0E0B\u0E34\u0E19\u0E19\u0E48\u0E30...\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E21\u0E32\u0E01\u0E40\u0E25\u0E22\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21\u0E25\u0E48\u0E30?*\u0E01\u0E23\u0E30\u0E0B\u0E34\u0E1A\u0E40\u0E1A\u0E32\u0E46*\"
-      (\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E17\u0E33\u0E2B\u0E19\u0E49\u0E32\u0E40\u0E28\u0E23\u0E49\u0E32)"
-    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 0
-    choices: []
-  - text: "\u0E40\u0E23\u0E32\u0E19\u0E48\u0E30... \r\n"
-    characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
-    hasChoices: 1
-    choices:
-    - "\u0E40\u0E23\u0E32\u0E40\u0E2D\u0E07\u0E01\u0E47\u0E2D\u0E22\u0E32\u0E01\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E1A\u0E31\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E19\u0E30"
-    - "\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E27\u0E48\u0E32\u0E40\u0E23\u0E32\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E19\u0E31
-      \u0E2B\u0E23\u0E2D\u0E01\u0E40\u0E2B\u0E23\u0E2D?"
-  interactionRadius: 2
-  interactKey: 101
-  typingSpeed: 0.05
-  useTypingEffect: 1
-  popScale: 1.2
-  popDuration: 0.2
-  popSound: {fileID: 0}
-  typingSound: {fileID: 0}
-  dialogueOpenSound: {fileID: 0}
-  dialogueCloseSound: {fileID: 0}
-  choicePanel: {fileID: 250847411}
-  choiceButtons:
-  - {fileID: 923088208}
-  - {fileID: 1309855034}
-  choiceTexts:
-  - {fileID: 858618875}
-  - {fileID: 1028347675}
-  choiceScores: 0a000000f6ffffff
-  sceneNamesForChoices: []
-  sceneChangeDelay: 1
 --- !u!212 &1368301647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1503,12 +1416,1047 @@ Transform:
   m_GameObject: {fileID: 1368301645}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.527611, y: -1.92, z: 0}
+  m_LocalPosition: {x: -4.16, y: -1.92, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1368301649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368301645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49960fbb7a9824245b2a70542b30da56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 169157144}
+  nameText: {fileID: 503173548}
+  dialogueText: {fileID: 1540079257}
+  speakerImage: {fileID: 1542375153}
+  defaultNpcName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+  dialogueLines:
+  - text: "\u0E2D\u0E49\u0E32\u0E21\u0E21\u0E21\u0E21\u0E21"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E14\u0E30..\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E01\u0E48\u0E2D\u0E19\u0E19\u0E30\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2D\u0E49\u0E32\u0E1B\u0E32\u0E01\u0E40\u0E23\u0E47\u0E27 \u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27\u0E40\u0E23\u0E32\u0E1B\u0E49\u0E2D\u0E19\u0E43\u0E2B\u0E49"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2D\u0E30..\u0E2D\u0E37\u0E49\u0E21"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E41\u0E25\u0E49\u0E27
+      \u0E40\u0E23\u0E32\u0E2D\u0E22\u0E32\u0E01\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E31\u0E1A\u0E0B\u0E34\u0E19\u0E21\u0E32\u0E15\u0E25\u0E2D\u0E14\u0E40\u0E25\u0E22\u0E19\u0E30"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E41\u0E15\u0E48\u0E44\u0E21\u0E48\u0E04\u0E48\u0E2D\u0E22\u0E21\u0E35\u0E42\u0E2D\u0E01\u0E32\u0E2A\u0E44\u0E14\u0E49\u0E04\u0E38\u0E22\u0E01\u0E31\u0E19\u0E21\u0E32\u0E01\u0E2A\u0E31\u0E01\u0E40\u0E17\u0E48\u0E32\u0E44\u0E23\u0E40\u0E25\u0E22"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E1E\u0E23\u0E32\u0E30\u0E0B\u0E34\u0E19\u0E19\u0E48\u0E30...\u0E0B\u0E34\u0E19\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E21\u0E32\u0E01\u0E40\u0E25\u0E22\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21\u0E25\u0E48\u0E30?"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E23\u0E32\u0E19\u0E48\u0E30..."
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 1
+    choices:
+    - "\u0E40\u0E23\u0E32\u0E40\u0E2D\u0E07\u0E01\u0E47\u0E2D\u0E22\u0E32\u0E01\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E19\u0E30"
+    - "\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E27\u0E48\u0E32\u0E40\u0E23\u0E32\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E31\u0E19\u0E2B\u0E23\u0E2D\u0E01\u0E40\u0E2B\u0E23\u0E2D?"
+    choiceScores: 0a000000f6ffffff
+    choiceLeadsTo: 0800000026000000
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E23\u0E32\u0E40\u0E2D\u0E07...\u0E01\u0E47\u0E2D\u0E22\u0E32\u0E01\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E40\u0E2B\u0E21\u0E37\u0E2D\u0E19\u0E01\u0E31\u0E19\u0E19\u0E30"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: ...!
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E23\u0E32\u0E19\u0E36\u0E01\u0E27\u0E48\u0E32\u0E40\u0E23\u0E32\u0E2D\u0E22\u0E32\u0E01\u0E2A\u0E19\u0E34\u0E17\u0E40\u0E2D\u0E07\u0E44\u0E1B\u0E04\u0E19\u0E40\u0E14\u0E35\u0E22\u0E27\u0E0B\u0E30\u0E2D\u0E35\u0E01...\u0E44\u0E21\u0E48\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E01\u0E47..."
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2D\u0E22\u0E32\u0E01\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E40\u0E23\u0E32\u0E21\u0E32\u0E01\u0E01\u0E27\u0E48\u0E32\u0E14\u0E32\u0E23\u0E34\u0E19\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21?"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E23\u0E32\u0E19\u0E48\u0E30...\u0E16\u0E49\u0E32\u0E44\u0E21\u0E48\u0E21\u0E35\u0E14\u0E32\u0E23\u0E34\u0E19\u0E01\u0E47\u0E04\u0E07\u0E08\u0E30\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E19\u0E01\u0E27\u0E48\u0E32\u0E19\u0E35\u0E49"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2D\u0E30..\u0E40\u0E2D\u0E48\u0E2D \u0E40\u0E21\u0E37\u0E48\u0E2D\u0E01\u0E35\u0E49\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E1E\u0E39\u0E14\u0E2D\u0E30\u0E44\u0E23\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1B\u0E25\u0E48\u0E32?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2B\u0E37\u0E2D?"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C\u0E02\u0E2D\u0E07\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E14\u0E31\u0E07\u0E02\u0E36\u0E49\u0E19"
+    characterName: "\u0E01\u0E23\u0E34\u0E4A\u0E07-\u0E01\u0E23\u0E34\u0E4A\u0E07-\u0E01\u0E23\u0E34\u0E4A\u0E07"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E42\u0E2D\u0E30 \u0E40\u0E23\u0E32\u0E04\u0E07\u0E15\u0E49\u0E2D\u0E07\u0E44\u0E1B\u0E41\u0E25\u0E49\u0E27
+      \u0E40\u0E23\u0E32\u0E40\u0E25\u0E35\u0E49\u0E22\u0E07\u0E0B\u0E34\u0E19\u0E40\u0E2D\u0E07\u0E19\u0E30
+      \u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E1E\u0E23\u0E38\u0E48\u0E07\u0E19\u0E35\u0E49"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E14\u0E30..\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27!"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E40\u0E14\u0E34\u0E19\u0E2D\u0E2D\u0E01\u0E44\u0E1B\u0E41\u0E25\u0E49\u0E27
+      \u0E40\u0E2B\u0E25\u0E37\u0E2D\u0E41\u0E04\u0E48\u0E0B\u0E34\u0E19\u0E19\u0E31\u0E48\u0E07\u0E17\u0E35\u0E48\u0E42\u0E15\u0E4A\u0E30\u0E41...."
+    characterName: 
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E43\u0E2B\u0E49\u0E17\u0E32\u0E22\u0E2A\u0E34\u0E27\u0E48\u0E32\u0E19\u0E31\u0E48\u0E19\u0E43\u0E04\u0E23?
+      \u0E43\u0E0A\u0E48\u0E0B\u0E34\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E2A\u0E21\u0E31\u0E22\u0E40\u0E14\u0E47\u0E01\u0E02\u0E2D\u0E07\u0E19\u0E49\u0E2D\u0E07\u0E14\u0E32\u0E23\u0E34\u0E19\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21\u0E08\u0E4A\u0E30?"
+    characterName: ???
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48!?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E44\u0E21\u0E48\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E08\u0E30\u0E40\u0E2B\u0E47\u0E19\u0E43\u0E04\u0E23\u0E1A\u0E32\u0E07\u0E04\u0E19\u0E21\u0E32\u0E40\u0E17\u0E35\u0E48\u0E22\u0E27\u0E40\u0E25\u0E48\u0E19\u0E01\u0E31\u0E1A\u0E25\u0E39\u0E01\u0E2A\u0E32\u0E27\u0E1C\u0E39\u0E49\u0E2D\u0E33\u0E19\u0E27\u0E22\u0E01\u0E32\u0E23"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "... \u0E09\u0E31\u0E19\u0E08\u0E30\u0E21\u0E32\u0E01\u0E31\u0E1A\u0E43\u0E04\u0E23
+      \u0E41\u0E25\u0E49\u0E27\u0E40\u0E18\u0E2D\u0E21\u0E35\u0E1B\u0E31\u0E0D\u0E2B\u0E32\u0E2D\u0E30\u0E44\u0E23\u0E14\u0E49\u0E27\u0E22?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E47\u0E40\u0E1B\u0E25\u0E48\u0E32 \u0E1E\u0E2D\u0E14\u0E35\u0E40\u0E2B\u0E47\u0E19\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E22\u0E31\u0E22\u0E14\u0E32\u0E23\u0E34\u0E19\u0E19\u0E35\u0E48\u0E19\u0E32
+      \u0E44\u0E21\u0E48\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E08\u0E30\u0E21\u0E32\u0E15\u0E35\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E14\u0E49\u0E27\u0E22"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E15\u0E35\u0E2A\u0E19\u0E34\u0E17?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E19\u0E48\u0E30\u0E40\u0E2B\u0E23\u0E2D?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E02\u0E32\u0E40\u0E23\u0E35\u0E22\u0E01\u0E01\u0E31\u0E19\u0E27\u0E48\u0E32\u0E2D\u0E30\u0E44\u0E23\u0E19\u0E30...."
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: " \u0E19\u0E01\u0E2A\u0E2D\u0E07\u0E2B\u0E31\u0E27\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1B\u0E25\u0E48\u0E32?"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "... \u0E41\u0E25\u0E49\u0E27\u0E04\u0E19\u0E41\u0E1A\u0E1A\u0E40\u0E18\u0E2D\u0E40\u0E02\u0E32\u0E40\u0E23\u0E35\u0E22\u0E01\u0E2D\u0E30\u0E44\u0E23
+      \u0E04\u0E19\u0E0A\u0E2D\u0E1A\u0E22\u0E38\u0E48\u0E07\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E0A\u0E32\u0E27\u0E1A\u0E49\u0E32\u0E19\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\u0E04\u0E34\u0E14\u0E17\u0E35\u0E48\u0E08\u0E30\u0E21\u0E35\u0E1B\u0E31\u0E0D\u0E2B\u0E32\u0E01\u0E31\u0E1A\u0E40\u0E18\u0E2D\u0E2B\u0E23\u0E2D\u0E01\u0E19\u0E30\u0E0B\u0E34\u0E19"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E41\u0E04\u0E48\u0E44\u0E21\u0E48\u0E0A\u0E2D\u0E1A\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E09\u0E22
+      \u0E46"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E21\u0E31\u0E19\u0E17\u0E33\u0E44\u0E21\u0E25\u0E48\u0E30?"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E47\u0E41\u0E04\u0E48\u0E44\u0E21\u0E48\u0E0A\u0E2D\u0E1A \u0E08\u0E1A\u0E44\u0E2B\u0E21"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E2B\u0E47\u0E19\u0E41\u0E01\u0E48\u0E17\u0E35\u0E48\u0E09\u0E31\u0E19\u0E23\u0E39\u0E49\u0E08\u0E31\u0E01\u0E40\u0E18\u0E2D\u0E21\u0E32\u0E19\u0E32\u0E19
+      \u0E09\u0E31\u0E19\u0E08\u0E30\u0E44\u0E21\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E40\u0E18\u0E2D\u0E2B\u0E23\u0E2D\u0E01\u0E19\u0E30
+      \u0E41\u0E15\u0E48\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E19\u0E48\u0E30\u0E44\u0E21\u0E48\u0E41\u0E19\u0E48"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48...\u0E40\u0E18\u0E2D\u0E08\u0E30\u0E17
+      \u0E32\u0E2D\u0E30\u0E44\u0E23?"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E25\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48\u0E40\u0E14\u0E34\u0E19\u0E2D\u0E2D\u0E01\u0E44\u0E1B\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E27\u0E31\u0E19\u0E19\u0E35\u0E49\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E08\u0E2D\u0E2D\u0E30\u0E44\u0E23\u0E1A\u0E49\u0E32\u0E07\u0E40\u0E19\u0E35\u0E48\u0E22!?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E2B\u0E25\u0E31\u0E07\u0E08\u0E32\u0E01\u0E19\u0E31\u0E49\u0E19\u0E0B\u0E34\u0E19\u0E08\u0E30\u0E01\u0E25\u0E31\u0E1A\u0E1A\u0E49\u0E32\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E48\u0E27\u0E48\u0E32\u0E17\u0E35\u0E48\u0E1C\u0E48\u0E32\u0E19\u0E21\u0E32\u0E40\u0E23\u0E32\u0E40\u0E1B\u0E47\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E31\u0E19\u0E2B\u0E23\u0E2D\u0E01\u0E40\u0E2B\u0E23\u0E2D?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "....\u0E2E\u0E30..\u0E2E\u0E30\u0E2E\u0E48\u0E32 \u0E46 \u0E46 \u0E46"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E2B\u0E31\u0E27\u0E40\u0E23\u0E32\u0E30\u0E2D\u0E2D\u0E01\u0E21\u0E32"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E19\u0E31\u0E48\u0E19\u0E2A\u0E34\u0E19\u0E30 \u0E17\u0E35\u0E48\u0E1C\u0E48\u0E32\u0E19\u0E21\u0E32\u0E40\u0E23\u0E32\u0E40\u0E1B\u0E47\u0E19\u0E44\u0E14\u0E49\u0E41\u0E04\u0E48\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E01\u0E31\u0E19\u0E2A\u0E34\u0E19\u0E30...\u0E40\u0E02\u0E49\u0E32\u0E43\u0E08\u0E41\u0E25\u0E49\u0E27"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E44\u0E2D\u0E23\u0E34\u0E19?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E02\u0E2D\u0E42\u0E17\u0E29\u0E17\u0E35 \u0E1E\u0E2D\u0E14\u0E35\u0E40\u0E23\u0E32\u0E21\u0E35\u0E18\u0E38\u0E23\u0E30\u0E19\u0E48\u0E30
+      \u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E1E\u0E23\u0E38\u0E48\u0E07\u0E19\u0E35\u0E49\u0E19\u0E30"
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E14\u0E30..\u0E40\u0E14\u0E35\u0E4B\u0E22\u0E27!"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E40\u0E14\u0E34\u0E19\u0E2D\u0E2D\u0E01\u0E44\u0E1B\u0E41\u0E25\u0E49\u0E27\u0E17\u0E34\u0E49\u0E07\u0E0B\u0E34\u0E19\u0E19\u0E31\u0E48\u0E07\u0E04\u0E19\u0E40\u0E14\u0E35\u0E22\u0E27"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E43\u0E2B\u0E49\u0E17\u0E32\u0E22\u0E2A\u0E34\u0E27\u0E48\u0E32\u0E19\u0E31\u0E48\u0E19\u0E43\u0E04\u0E23?
+      \u0E43\u0E0A\u0E48\u0E0B\u0E34\u0E19\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E2A\u0E21\u0E31\u0E22\u0E40\u0E14\u0E47\u0E01\u0E02\u0E2D\u0E07\u0E19\u0E49\u0E2D\u0E07\u0E14\u0E32\u0E23\u0E34\u0E19\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21\u0E08\u0E4A\u0E30?"
+    characterName: ???
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48!?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E44\u0E21\u0E48\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E08\u0E30\u0E40\u0E2B\u0E47\u0E19\u0E43\u0E04\u0E23\u0E1A\u0E32\u0E07\u0E04\u0E19\u0E21\u0E32\u0E40\u0E17\u0E35\u0E48\u0E22\u0E27\u0E40\u0E25\u0E48\u0E19\u0E01\u0E31\u0E1A\u0E25\u0E39\u0E01\u0E2A\u0E32\u0E27\u0E1C\u0E39\u0E49\u0E2D\u0E33\u0E19\u0E27\u0E22\u0E01\u0E32\u0E23"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "... \u0E09\u0E31\u0E19\u0E08\u0E30\u0E21\u0E32\u0E01\u0E31\u0E1A\u0E43\u0E04\u0E23
+      \u0E41\u0E25\u0E49\u0E27\u0E40\u0E18\u0E2D\u0E21\u0E35\u0E1B\u0E31\u0E0D\u0E2B\u0E32\u0E2D\u0E30\u0E44\u0E23\u0E14\u0E49\u0E27\u0E22?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E47\u0E40\u0E1B\u0E25\u0E48\u0E32 \u0E1E\u0E2D\u0E14\u0E35\u0E40\u0E2B\u0E47\u0E19\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E22\u0E31\u0E22\u0E14\u0E32\u0E23\u0E34\u0E19\u0E19\u0E35\u0E48\u0E19\u0E32
+      \u0E44\u0E21\u0E48\u0E04\u0E34\u0E14\u0E27\u0E48\u0E32\u0E08\u0E30\u0E21\u0E32\u0E15\u0E35\u0E2A\u0E19\u0E34\u0E17\u0E01\u0E31\u0E1A\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E14\u0E49\u0E27\u0E22"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E15\u0E35\u0E2A\u0E19\u0E34\u0E17?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E19\u0E48\u0E30\u0E40\u0E2B\u0E23\u0E2D?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E02\u0E32\u0E40\u0E23\u0E35\u0E22\u0E01\u0E01\u0E31\u0E19\u0E27\u0E48\u0E32\u0E2D\u0E30\u0E44\u0E23\u0E19\u0E30...."
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: " \u0E19\u0E01\u0E2A\u0E2D\u0E07\u0E2B\u0E31\u0E27\u0E2B\u0E23\u0E37\u0E2D\u0E40\u0E1B\u0E25\u0E48\u0E32?"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "... \u0E41\u0E25\u0E49\u0E27\u0E04\u0E19\u0E41\u0E1A\u0E1A\u0E40\u0E18\u0E2D\u0E40\u0E02\u0E32\u0E40\u0E23\u0E35\u0E22\u0E01\u0E2D\u0E30\u0E44\u0E23
+      \u0E04\u0E19\u0E0A\u0E2D\u0E1A\u0E22\u0E38\u0E48\u0E07\u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E02\u0E2D\u0E07\u0E0A\u0E32\u0E27\u0E1A\u0E49\u0E32\u0E19\u0E43\u0E0A\u0E48\u0E44\u0E2B\u0E21?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E44\u0E21\u0E48\u0E40\u0E04\u0E22\u0E04\u0E34\u0E14\u0E17\u0E35\u0E48\u0E08\u0E30\u0E21\u0E35\u0E1B\u0E31\u0E0D\u0E2B\u0E32\u0E01\u0E31\u0E1A\u0E40\u0E18\u0E2D\u0E2B\u0E23\u0E2D\u0E01\u0E19\u0E30\u0E0B\u0E34\u0E19"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E09\u0E31\u0E19\u0E41\u0E04\u0E48\u0E44\u0E21\u0E48\u0E0A\u0E2D\u0E1A\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E09\u0E22
+      \u0E46"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E04\u0E19\u0E17\u0E35\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E21\u0E31\u0E19\u0E17\u0E33\u0E44\u0E21\u0E25\u0E48\u0E30?"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E47\u0E41\u0E04\u0E48\u0E44\u0E21\u0E48\u0E0A\u0E2D\u0E1A \u0E08\u0E1A\u0E44\u0E2B\u0E21"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E40\u0E2B\u0E47\u0E19\u0E41\u0E01\u0E48\u0E17\u0E35\u0E48\u0E09\u0E31\u0E19\u0E23\u0E39\u0E49\u0E08\u0E31\u0E01\u0E40\u0E18\u0E2D\u0E21\u0E32\u0E19\u0E32\u0E19
+      \u0E09\u0E31\u0E19\u0E08\u0E30\u0E44\u0E21\u0E48\u0E22\u0E38\u0E48\u0E07\u0E01\u0E31\u0E1A\u0E40\u0E18\u0E2D\u0E2B\u0E23\u0E2D\u0E01\u0E19\u0E30
+      \u0E41\u0E15\u0E48\u0E01\u0E31\u0E1A\u0E14\u0E32\u0E23\u0E34\u0E19\u0E19\u0E48\u0E30\u0E44\u0E21\u0E48\u0E41\u0E19\u0E48"
+    characterName: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48...\u0E40\u0E18\u0E2D\u0E08\u0E30\u0E17
+      \u0E32\u0E2D\u0E30\u0E44\u0E23?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E25\u0E25\u0E34\u0E25\u0E25\u0E35\u0E48\u0E40\u0E14\u0E34\u0E19\u0E2D\u0E2D\u0E01\u0E44\u0E1B\u0E35\u0E48"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E27\u0E31\u0E19\u0E19\u0E35\u0E49\u0E09\u0E31\u0E19\u0E15\u0E49\u0E2D\u0E07\u0E40\u0E08\u0E2D\u0E2D\u0E30\u0E44\u0E23\u0E1A\u0E49\u0E32\u0E07\u0E40\u0E19\u0E35\u0E48\u0E22!?"
+    characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "\u0E2B\u0E25\u0E31\u0E07\u0E08\u0E32\u0E01\u0E19\u0E31\u0E49\u0E19\u0E0B\u0E34\u0E19\u0E08\u0E30\u0E01\u0E25\u0E31\u0E1A\u0E1A\u0E49\u0E32\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  interactionRadius: 3
+  interactKey: 101
+  typingSpeed: 0.05
+  useTypingEffect: 1
+  popScale: 1.2
+  popDuration: 0.2
+  popSound: {fileID: 0}
+  typingSound: {fileID: 0}
+  dialogueOpenSound: {fileID: 0}
+  dialogueCloseSound: {fileID: 0}
+  choicePanel: {fileID: 250847411}
+  choiceButtons:
+  - {fileID: 923088208}
+  - {fileID: 1309855034}
+  choiceTexts:
+  - {fileID: 858618875}
+  - {fileID: 1028347675}
+  fadeDuration: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1413802538
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,7 +2963,7 @@ Transform:
   m_GameObject: {fileID: 1872586182}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.95, y: -2, z: 0}
+  m_LocalPosition: {x: 5.12, y: -2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []

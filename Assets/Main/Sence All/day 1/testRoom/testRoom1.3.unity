@@ -373,7 +373,7 @@ MonoBehaviour:
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
-  sceneNameToLoad: testRoom1.4
+  sceneNameToLoad: Q1
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
