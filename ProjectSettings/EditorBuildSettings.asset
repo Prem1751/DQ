@@ -63,8 +63,11 @@ EditorBuildSettings:
     path: Assets/Main/Sence All/day 1/testRoom/New Scene.unity
     guid: f385c9efda1350b49a043b534fe14add
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/testRoom/Testroom1.unity
-    guid: ecda58db7aab2fb49a2e864484d3eccc
+    path: Assets/Main/Sence All/day 1/Ques/Q1.unity
+    guid: ab7ed85676dcd1c43a0c8750486ccdb6
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q2.unity
+    guid: dd11aa6417726ed4b91709a3b7c24fd1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
