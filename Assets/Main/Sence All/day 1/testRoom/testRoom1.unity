@@ -1572,9 +1572,9 @@ MonoBehaviour:
     choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThisLine: 0
-    sceneNameToLoad: 
-    sceneTransitionDelay: 0
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: testRoom1.2
+    sceneTransitionDelay: 1
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
@@ -1603,9 +1603,9 @@ MonoBehaviour:
     choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThisLine: 0
-    sceneNameToLoad: 
-    sceneTransitionDelay: 0
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: testRoom1.2
+    sceneTransitionDelay: 1
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
