@@ -194,81 +194,6 @@ RectTransform:
   m_AnchoredPosition: {x: 647.45557, y: 141.59}
   m_SizeDelta: {x: 335.089, y: 523.368}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &425743480
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 425743481}
-  - component: {fileID: 425743483}
-  - component: {fileID: 425743482}
-  m_Layer: 5
-  m_Name: fade
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &425743481
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425743480}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4603091, y: 0.445236, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 748371093}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1820, y: -980}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &425743482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425743480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &425743483
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 425743480}
-  m_CullTransparentMesh: 1
 --- !u!1 &532013843
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,7 +426,6 @@ RectTransform:
   m_Children:
   - {fileID: 2116430702}
   - {fileID: 934464969}
-  - {fileID: 425743481}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1369,6 +1293,7 @@ GameObject:
   - component: {fileID: 1480887511}
   - component: {fileID: 1480887509}
   - component: {fileID: 1480887507}
+  - component: {fileID: 1480887512}
   m_Layer: 0
   m_Name: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
   m_TagString: Untagged
@@ -1496,100 +1421,116 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f060a1e380529479bf322d0c51e11b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 1668009515}
+--- !u!114 &1480887512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480887506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49960fbb7a9824245b2a70542b30da56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 2133832332}
   nameText: {fileID: 532013846}
   dialogueText: {fileID: 1887333909}
   speakerImage: {fileID: 311930243}
-  fadeOverlay: {fileID: 425743482}
   defaultNpcName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
   dialogueLines:
-  - text: "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E0B\u0E34\u0E19!"
+  - text: "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E0B\u0E34\u0E19"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E42\u0E2D\u0E30 \u0E44\u0E2D\u0E23\u0E34\u0E19 \u0E2B\u0E27\u0E31\u0E14\u0E14\u0E35"
     characterName: "\u0E0B\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E27\u0E31\u0E19\u0E19\u0E35\u0E49\u0E27\u0E31\u0E19\u0E2A\u0E2D\u0E1A\u0E27\u0E31\u0E19\u0E41\u0E23\u0E01
-      \u0E40\u0E23\u0E32\u0E01\u0E47\u0E21\u0E32\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E44\u0E1B\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19\u0E19\u0E30
-      (\u0E22\u0E34\u0E49\u0E21)"
+      \u0E40\u0E23\u0E32\u0E01\u0E47\u0E21\u0E32\u0E1E\u0E22\u0E32\u0E22\u0E32\u0E21\u0E44\u0E1B\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19\u0E19\u0E30"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E04\u0E30..\u0E04\u0E48\u0E30!"
     characterName: "\u0E0B\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E1C\u0E39\u0E49\u0E2B\u0E0D\u0E34\u0E07\u0E04\u0E19\u0E19\u0E35\u0E49\u0E0A\u0E37\u0E48\u0E2D\u0E44\u0E2D\u0E23\u0E34\u0E19
       \u0E40\u0E1B\u0E47\u0E19\u0E25\u0E39\u0E01\u0E2A\u0E32\u0E27\u0E02\u0E2D\u0E07\u0E1C\u0E39\u0E49\u0E2D\u0E33\u0E19\u0E27\u0E22\u0E01\u0E32\u0E23\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E19\u0E35\u0E49"
-    characterName: "\u0E0B\u0E34\u0E19(\u0E01\u0E33\u0E25\u0E31\u0E07\u0E04\u0E34\u0E14)"
+    characterName: "\u0E0B\u0E34\u0E19(\u0E04\u0E34\u0E14\u0E43\u0E19\u0E43\u0E08)"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E43\u0E19\u0E15\u0E2D\u0E19\u0E41\u0E23\u0E01\u0E40\u0E18\u0E2D\u0E2A\u0E2D\u0E1A\u0E44\u0E14\u0E49\u0E2D\u0E31\u0E19\u0E14\u0E31\u0E1A\u0E17\u0E35\u0E48\u0E2B\u0E19\u0E36\u0E48\u0E07\u0E02\u0E2D\u0E07\u0E2A\u0E32\u0E22\u0E0A\u0E31\u0E49\u0E19\u0E21\u0E32\u0E42\u0E14\u0E22\u0E15\u0E25\u0E2D\u0E14\r\n\u0E08\u0E19\u0E01\u0E23\u0E30\u0E17\u0E31\u0E48\u0E07\u0E14\u0E32\u0E23\u0E34\u0E19\u0E22\u0E49\u0E32\u0E22\u0E21\u0E32"
-    characterName: "\u0E0B\u0E34\u0E19(\u0E01\u0E33\u0E25\u0E31\u0E07\u0E04\u0E34\u0E14)"
+    characterName: "\u0E0B\u0E34\u0E19(\u0E04\u0E34\u0E14\u0E43\u0E19\u0E43\u0E08)"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E41\u0E25\u0E49\u0E27\u0E2B\u0E25\u0E31\u0E07\u0E2A\u0E2D\u0E1A\u0E40\u0E2A\u0E23\u0E47\u0E08\u0E2A\u0E19\u0E43\u0E08\u0E44\u0E1B\u0E2B\u0E32\u0E2D\u0E30\u0E44\u0E23\u0E01\u0E34\u0E19\u0E17\u0E35\u0E48\u0E23\u0E49\u0E32\u0E19\u0E2B\u0E25\u0E31\u0E07\u0E42\u0E23\u0E07\u0E40\u0E23\u0E35\u0E22\u0E19\u0E14\u0E49\u0E27\u0E22\u0E01\u0E31\u0E19\u0E44\u0E2B\u0E21?"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
@@ -1598,42 +1539,45 @@ MonoBehaviour:
     choices:
     - "\u0E44\u0E1B"
     - "\u0E44\u0E21\u0E48\u0E44\u0E1B"
+    choiceScores: 0000000000000000
     choiceLeadsTo: 0700000009000000
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E19\u0E48\u0E32\u0E2A\u0E19\u0E43\u0E08\u0E14\u0E35\u0E19\u0E30"
     characterName: "\u0E0B\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E2E\u0E38\u0E2E\u0E38 \u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E19\u0E30"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 1
-    sceneToLoad: testRoom1.2
-    sceneChangeDelay: 2
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E02\u0E2D\u0E42\u0E17\u0E29\u0E19\u0E30\u0E44\u0E2D\u0E23\u0E34\u0E19
       \u0E40\u0E23\u0E32\u0E44\u0E21\u0E48\u0E27\u0E48\u0E32\u0E07\u0E19\u0E48\u0E30"
     characterName: "\u0E0B\u0E34\u0E19"
@@ -1641,28 +1585,30 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 0
-    sceneToLoad: 
-    sceneChangeDelay: 0
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E44\u0E21\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E44\u0E23 \u0E44\u0E27\u0E49\u0E40\u0E08\u0E2D\u0E01\u0E31\u0E19\u0E19\u0E30"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
+    choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThis: 1
-    sceneToLoad: testRoom1.2
-    sceneChangeDelay: 2
-    useFadeEffect: 1
-    fadeColor: {r: 0, g: 0, b: 0, a: 1}
-    fadeDuration: 1
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   interactionRadius: 2
   interactKey: 101
   typingSpeed: 0.05
@@ -1680,7 +1626,8 @@ MonoBehaviour:
   choiceTexts:
   - {fileID: 790511177}
   - {fileID: 1119358652}
-  choiceScores: 0a00000000000000
+  fadeDuration: 1
+  fadeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1668009515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,7 +1653,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1668009515}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.24, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1715,7 +1662,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 35.14}
+  m_AnchoredPosition: {x: 0, y: 35.14003}
   m_SizeDelta: {x: 1706.9141, y: 272.51648}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1668009517
