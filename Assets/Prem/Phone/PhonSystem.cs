@@ -5,6 +5,7 @@ public class PhoneSystem : MonoBehaviour
 {
     public GameObject phoneScreen; // หน้าจอโทรศัพท์
     public GameObject[] appCanvases; // Canvas ของแอปทั้งหมด
+    public GameObject chatNotificationIcon; // ไอคอนแจ้งเตือนแชท
 
     private bool isPhoneOpen = false;
 
@@ -20,6 +21,10 @@ public class PhoneSystem : MonoBehaviour
         phoneOnScreenPos = phoneScreen.transform.position;
         phoneOffScreenPos = phoneOnScreenPos - new Vector3(0, Screen.height, 0);
         phoneScreen.transform.position = phoneOffScreenPos;
+
+        // ซ่อนไอคอนแจ้งเตือนเริ่มต้น
+        if (chatNotificationIcon != null)
+            chatNotificationIcon.SetActive(false);
     }
 
     void Update()
@@ -54,6 +59,12 @@ public class PhoneSystem : MonoBehaviour
         if (appIndex >= 0 && appIndex < appCanvases.Length)
         {
             appCanvases[appIndex].SetActive(true);
+
+            // ถ้าเปิดแอปแชท ให้เรียก OnAppOpened
+            if (appCanvases[appIndex].GetComponentInChildren<ChatManager>() != null)
+            {
+                ChatManager.Instance.OnAppOpened();
+            }
         }
 
         // ปิดโทรศัพท์เมื่อเปิดแอป (optional)
@@ -66,6 +77,19 @@ public class PhoneSystem : MonoBehaviour
         foreach (GameObject appCanvas in appCanvases)
         {
             appCanvas.SetActive(false);
+
+            // ถ้าเป็นแอปแชท ให้เรียก OnAppClosed
+            if (appCanvas.GetComponentInChildren<ChatManager>() != null)
+            {
+                ChatManager.Instance.OnAppClosed();
+            }
         }
+    }
+
+    // เรียกจาก ChatManager เมื่อมีข้อความใหม่
+    public void ShowChatNotification(bool show)
+    {
+        if (chatNotificationIcon != null)
+            chatNotificationIcon.SetActive(show);
     }
 }
