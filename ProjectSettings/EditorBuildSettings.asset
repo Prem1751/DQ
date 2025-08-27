@@ -78,7 +78,7 @@ EditorBuildSettings:
     path: Assets/Main/Sence All/day 1/testRoom/testRoom1.5.unity
     guid: f169fab959977ef46a9e4627e5654f69
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/cafe/Cafe p1.unity
+    path: Assets/Main/Sence All/day 1/cafe/cafe p1.unity
     guid: d846ced484e28884ba2c06ff5affe612
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/waytocafe.unity
