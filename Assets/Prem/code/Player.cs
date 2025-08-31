@@ -44,6 +44,7 @@ public class SimpleRunMovement : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         if (animator == null) animator = GetComponent<Animator>();
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
 
         CalculateMapBoundaries();
     }
@@ -96,14 +97,30 @@ public class SimpleRunMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetKey(runKey);
 
+        // Simplified sprite flipping - always update when there's input
         if (flipSprite && horizontalInput != 0)
         {
-            isFacingRight = horizontalInput > 0;
-            transform.localScale = new Vector3(
-                Mathf.Abs(transform.localScale.x) * (isFacingRight ? 1 : -1),
-                transform.localScale.y,
-                transform.localScale.z
-            );
+            bool shouldFaceRight = horizontalInput > 0;
+            isFacingRight = shouldFaceRight;
+            FlipCharacter();
+        }
+    }
+
+    private void FlipCharacter()
+    {
+        // Use SpriteRenderer.flipX for proper flipping
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.flipX = isFacingRight; // true = face left, false = face right (swapped)
+            Debug.Log($"Flipping sprite: isFacingRight={isFacingRight}, flipX={spriteRenderer.flipX}");
+        }
+        else
+        {
+            // Fallback to scale method if no SpriteRenderer
+            Vector3 scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * (isFacingRight ? -1 : 1); // Swapped
+            transform.localScale = scale;
+            Debug.Log($"Flipping scale: isFacingRight={isFacingRight}, scale.x={scale.x}");
         }
     }
 
