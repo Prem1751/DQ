@@ -831,7 +831,7 @@ MonoBehaviour:
     requiredScore: 0
     scoreBasedSceneName: 
   - text: "\u0E0B\u0E34\u0E19 \u0E40\u0E1B\u0E47\u0E19\u0E44\u0E07\u0E1A\u0E49\u0E32\u0E07
-      \u0E17 \u0E32\u0E02\u0E49\u0E2D\u0E2A\u0E2D\u0E1A\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21?"
+      \u0E17\u0E33\u0E02\u0E49\u0E2D\u0E2A\u0E2D\u0E1A\u0E44\u0E14\u0E49\u0E44\u0E2B\u0E21?"
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -1059,6 +1059,22 @@ MonoBehaviour:
     scoreBasedSceneName: 
   - text: "\u0E42\u0E2D\u0E40\u0E04"
     characterName: "\u0E0B\u0E34\u0E19"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: 
+    characterName: "**\u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E02\u0E27\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E44\u0E1B\u0E0A\u0E31\u0E49\u0E19
+      3**"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
@@ -1798,7 +1814,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -955.69507, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
