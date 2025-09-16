@@ -942,7 +942,8 @@ MonoBehaviour:
   speedParam: Speed
   flipSprite: 1
   runParticles: {fileID: 0}
-  backgroundSprites: []
+  backgroundSprites:
+  - {fileID: 698974374}
   edgePadding: 0.5
   rb: {fileID: 854047811}
   spriteRenderer: {fileID: 0}
