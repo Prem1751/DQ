@@ -32,32 +32,32 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/school2.unity
     guid: 8616326e506974842a715f840504f9b3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Sence All/day 2/testroom2.2.unity
     guid: 5348f4938fc37c7489094de740d677f2
   - enabled: 1
-    path: Assets/Main/Sence All/day 2/canteen2.unity
+    path: Assets/Main/Sence All/day 2/D2school/canteenD2/canteen2.1.unity
     guid: 9f6c7b66f5422ec4e8330b2eb9de91df
   - enabled: 1
-    path: Assets/Main/Sence All/day 2/school2.1.unity
+    path: Assets/Main/Sence All/day 2/D2school/school2.1.unity
     guid: 0e98013909336d44087695588ca0dffd
   - enabled: 1
-    path: Assets/Main/Sence All/day 2/school2.2.unity
-    guid: 1efa5a017f656074eaf1fb7103acf984
-  - enabled: 1
-    path: Assets/Main/Sence All/day 2/school2.2.1.unity
+    path: Assets/Main/Sence All/day 2/D2school/school2.2.unity
+    guid: d80838b2fdb365a4caeb51b882b4a290
+  - enabled: 0
+    path: Assets/Main/Sence All/day 2/D2school/school2.2.1.unity
     guid: c50de996a5931f5448f4a2dd75d23ab5
-  - enabled: 1
-    path: Assets/Main/Sence All/day 2/school2.2.2.unity
+  - enabled: 0
+    path: Assets/Main/Sence All/day 2/D2school/school2.2.2.unity
     guid: 00edfb084f4ecb64b94d5b0da830cbad
   - enabled: 1
     path: Assets/Main/Sence All/day 2/schoolYes.unity
     guid: c4e47dad5cff4c84fbfb2ca23e94a75f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Sence All/day 2/testroom2.1.unity
     guid: ecef4e2b30eb4094581c3cf1a5a593c2
   - enabled: 1
-    path: "Assets/Main/Sence All/day 2/\u0E1A\u0E49\u0E32\u0E191.unity"
+    path: "Assets/Main/Sence All/day 2/Home/\u0E1A\u0E49\u0E32\u0E191.unity"
     guid: d56f5c850291a624eb98cbea605f4e93
   - enabled: 0
     path: Assets/Main/Sence All/day 1/testRoom/New Scene.unity
@@ -72,19 +72,19 @@ EditorBuildSettings:
     path: Assets/Main/Sence All/day 1/Ques/Q3.unity
     guid: c157154716f33b247a26fccc0120e80f
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/canteen.unity
+    path: Assets/Main/Sence All/day 1/canteen/canteen1.unity
     guid: 08aeac65ed723724083d868319e837d4
   - enabled: 1
     path: Assets/Main/Sence All/day 1/testRoom/testRoom1.5.unity
     guid: f169fab959977ef46a9e4627e5654f69
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/cafe/cafe p1.unity
+    path: Assets/Main/Sence All/day 1/cafe/Cafe p1.unity
     guid: d846ced484e28884ba2c06ff5affe612
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/waytocafe.unity
     guid: 8ab07d0a0c9e9cb4594c3f40e650ea02
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/school/Ifdontgocafe.unity
+    path: Assets/Main/Sence All/day 1/school/NCschoolaftest.unity
     guid: 890421e22561a6d4cb53ba82e01f6889
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/floor3.unity
@@ -95,6 +95,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/main/main1.2.unity
     guid: b15913e3e71665b458062518be5c74cd
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/testRoomD2/testRoom2.1.unity
+    guid: b3c7f029c700eee41a9c37c275ed9781
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/testRoomD2/testRoom2.2.unity
+    guid: ef1567916dd6ebd4092e8569dedfd17b
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/spa/spa.unity
+    guid: 5f3cc98751b8d244c96403f021a18744
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

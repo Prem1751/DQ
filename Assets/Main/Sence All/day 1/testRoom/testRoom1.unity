@@ -535,7 +535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E44\u0E1B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3088610c126a26e46b3304e94d336012, type: 2}
   m_sharedMaterial: {fileID: 661800415617456084, guid: 3088610c126a26e46b3304e94d336012, type: 2}
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0E44\u0E21\u0E48\u0E44\u0E1B"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3088610c126a26e46b3304e94d336012, type: 2}
   m_sharedMaterial: {fileID: 661800415617456084, guid: 3088610c126a26e46b3304e94d336012, type: 2}
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   dialogueLines:
   - text: "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35\u0E0B\u0E34\u0E19"
     characterName: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: -3209090252026844032, guid: 42992c184ce64624c91bfd11256fbc34, type: 3}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
