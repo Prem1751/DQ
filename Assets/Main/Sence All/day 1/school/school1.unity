@@ -2116,7 +2116,9 @@ MonoBehaviour:
   speedParam: Speed
   flipSprite: 1
   runParticles: {fileID: 0}
-  backgroundSprites: []
+  backgroundSprites:
+  - {fileID: 111703843}
+  - {fileID: 53251492}
   edgePadding: 0.5
   rb: {fileID: 1185648114}
   spriteRenderer: {fileID: 0}
@@ -3323,7 +3325,7 @@ MonoBehaviour:
   offset: {x: 0, y: 1.25, z: -10}
   backgrounds:
   - {fileID: 111703843}
-  - {fileID: 0}
+  - {fileID: 53251492}
 --- !u!1 &1665089232
 GameObject:
   m_ObjectHideFlags: 0
