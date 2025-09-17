@@ -16,7 +16,7 @@ EditorBuildSettings:
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
     path: Assets/Main/Sence All/day 1/testRoom/testRoom1.1.unity
-    guid: 46f4345f7be26e249ada615520276565
+    guid: ecda58db7aab2fb49a2e864484d3eccc
   - enabled: 1
     path: Assets/Main/Sence All/day 1/testRoom/testRoom1.2.unity
     guid: 3fb3855f2cfb0ce4b8f2981f871bf0c6
@@ -29,8 +29,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/school1.unity
     guid: 70f9a09a53c862840940a8aa8e6b4548
-  - enabled: 1
-    path: Assets/Main/Sence All/day 1/school/school2.unity
+  - enabled: 0
+    path: "Assets/Main/Sence All/day 1/school/school2\u0E44\u0E21\u0E48\u0E43\u0E0A\u0E49.unity"
     guid: 8616326e506974842a715f840504f9b3
   - enabled: 0
     path: Assets/Main/Sence All/day 2/testroom2.2.unity
@@ -80,7 +80,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/cafe/Cafe p1.unity
     guid: d846ced484e28884ba2c06ff5affe612
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Sence All/day 1/school/waytocafe.unity
     guid: 8ab07d0a0c9e9cb4594c3f40e650ea02
   - enabled: 1
@@ -104,6 +104,60 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 2/D2school/ROOM/spa/spa.unity
     guid: 5f3cc98751b8d244c96403f021a18744
+  - enabled: 1
+    path: "Assets/Main/Sence All/day 2/Home/\u0E1A\u0E49\u0E32\u0E192.unity"
+    guid: 1fe265b69d75fe341b2f01d4cf582265
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/testRoom1.1.unity
+    guid: ecda58db7aab2fb49a2e864484d3eccc
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q4.unity
+    guid: a7631f8e946e3b04d9714c455e104441
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q5.unity
+    guid: fa49698916872e845a327acce39f4684
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ1.unity
+    guid: f222c42eaa5437142aa2f0748b013e15
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ2.unity
+    guid: 172bdd4f5fec4bc48a1fa9f4951d7916
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ3.unity
+    guid: 70131a35feae1574ab26ff40009b733e
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ4.unity
+    guid: 03961149bc71f8842b7728caf6014a4d
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ5.unity
+    guid: 7c98a406296fde144ac7b99d6b0a29b5
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/NCtestRoom1.2.unity
+    guid: 274a0fb544207e449936e453a6b01a81
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/NCtestRoom1.3.unity
+    guid: d09f12d1df87b07418eb526a9ade8f8a
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/NCtestRoom1.4.unity
+    guid: 1c810a602900f9546babf8de7694da1d
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/NCtestRoom1.5.unity
+    guid: 130d26fed14023844996bd3a2be2c978
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ6.unity
+    guid: e98530b3c86e8c44aab533ddbbb0b2fc
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ7.unity
+    guid: 373991f1150e20b40b05f1e592d3761e
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ8.unity
+    guid: c7049d8c4466b9e40801e89ff53af7cf
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ9.unity
+    guid: 80a4be6b26e7d5d4c9c7d78e26d906d2
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ10.unity
+    guid: 6ed809aeea54bd8448fa0fa0a1705f93
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

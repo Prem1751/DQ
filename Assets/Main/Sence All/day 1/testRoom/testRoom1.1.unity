@@ -1604,7 +1604,7 @@ MonoBehaviour:
     choiceLeadsTo: 
     postChoiceDialogue: 
     changeSceneAfterThisLine: 1
-    sceneNameToLoad: testRoom1.2
+    sceneNameToLoad: NCtestRoom1.2
     sceneTransitionDelay: 1
     useScoreBasedTransition: 0
     requiredScore: 0
