@@ -5,6 +5,7 @@ public class PhoneSystem : MonoBehaviour
 {
     public GameObject phoneScreen; // ÀπÈ“®Õ‚∑√»—æ∑Ï
     public GameObject[] appCanvases; // Canvas ¢Õß·Õª∑—ÈßÀ¡¥
+    public PhoneUI phoneUI; // Reference ‰ª∑’Ë PhoneUI
 
     private bool isPhoneOpen = false;
     private bool isAnimating = false;
@@ -21,6 +22,16 @@ public class PhoneSystem : MonoBehaviour
         {
             Debug.LogError("PhoneScreen is not assigned in the inspector!");
             return;
+        }
+
+        // §ÈπÀ“ PhoneUI ∂È“‰¡Ë‰¥È°”Àπ¥‰«È
+        if (phoneUI == null)
+        {
+            phoneUI = FindObjectOfType<PhoneUI>();
+            if (phoneUI == null)
+            {
+                Debug.LogError("PhoneUI not found in scene!");
+            }
         }
 
         // ‡√‘Ë¡µÈπª‘¥‚∑√»—æ∑Ï·≈–∑ÿ°·Õª
@@ -61,6 +72,14 @@ public class PhoneSystem : MonoBehaviour
                 {
                     phoneScreen.SetActive(false);
                 }
+                else
+                {
+                    // ‡¡◊ËÕ‡ª‘¥‚∑√»—æ∑Ï‡ √Á® „ÀÈ√’‡ø√™ UI
+                    if (phoneUI != null)
+                    {
+                        phoneUI.RefreshUI();
+                    }
+                }
             }
         }
     }
@@ -73,6 +92,11 @@ public class PhoneSystem : MonoBehaviour
         if (isPhoneOpen)
         {
             phoneScreen.SetActive(true);
+            // √’‡ø√™ UI ‡¡◊ËÕ‡ª‘¥‚∑√»—æ∑Ï
+            if (phoneUI != null)
+            {
+                phoneUI.RefreshUI();
+            }
         }
 
         // ∂È“ª‘¥‚∑√»—æ∑Ï „ÀÈª‘¥∑ÿ°·Õª¥È«¬
@@ -84,18 +108,77 @@ public class PhoneSystem : MonoBehaviour
 
     public void OpenApp(int appIndex)
     {
+        // ‡ª‘¥‚∑√»—æ∑Ï°ËÕπ∂È“¬—ß‰¡Ë‡ª‘¥
+        if (!isPhoneOpen)
+        {
+            TogglePhone();
+
+            // „™È Coroutine ‡æ◊ËÕ√Õ„ÀÈ‚∑√»—æ∑Ï‡ª‘¥‡ √Á®°ËÕπ·≈È«§ËÕ¬‡ª‘¥·Õª
+            StartCoroutine(OpenAppAfterPhone(appIndex));
+            return;
+        }
+
         // ª‘¥∑ÿ°·Õª°ËÕπ‡ª‘¥·Õª„À¡Ë
         CloseAllApps();
 
         // µ√«® Õ∫«Ë“ index Õ¬ŸË„π™Ë«ß∑’Ë∂Ÿ°µÈÕß
-        if (appIndex >= 0 && appIndex < appCanvases.Length)
+        if (appIndex >= 0 && appIndex < appCanvases.Length && appCanvases[appIndex] != null)
         {
             appCanvases[appIndex].SetActive(true);
+            Debug.Log($"Opened app index: {appIndex}");
+        }
+        else
+        {
+            Debug.LogError($"Invalid app index: {appIndex}");
         }
 
-        // ª‘¥‚∑√»—æ∑Ï‡¡◊ËÕ‡ª‘¥·Õª
-        isPhoneOpen = false;
-        isAnimating = true;
+        // ‰¡Ëª‘¥‚∑√»—æ∑Ï‡¡◊ËÕ‡ª‘¥·Õª („ÀÈ·Õª· ¥ß∫π‚∑√»—æ∑Ï)
+    }
+
+    private System.Collections.IEnumerator OpenAppAfterPhone(int appIndex)
+    {
+        // √Õ„ÀÈ‚∑√»—æ∑Ï‡ª‘¥‡ √Á®
+        while (isAnimating)
+        {
+            yield return null;
+        }
+
+        // √ÕÕ’°‡≈Á°πÈÕ¬‡æ◊ËÕ„ÀÈ·πË„®
+        yield return new WaitForSeconds(0.1f);
+
+        // ‡ª‘¥·Õª
+        CloseAllApps();
+
+        if (appIndex >= 0 && appIndex < appCanvases.Length && appCanvases[appIndex] != null)
+        {
+            appCanvases[appIndex].SetActive(true);
+            Debug.Log($"Opened app index: {appIndex} after phone animation");
+        }
+    }
+
+    public void OpenAppImmediately(int appIndex)
+    {
+        // ‡ª‘¥‚∑√»—æ∑Ï∑—π∑’‚¥¬‰¡Ë· ¥ß animation
+        isPhoneOpen = true;
+        isAnimating = false;
+        phoneScreen.SetActive(true);
+        phoneRectTransform.anchoredPosition = phoneOnScreenPos;
+
+        // ª‘¥∑ÿ°·Õª°ËÕπ‡ª‘¥·Õª„À¡Ë
+        CloseAllApps();
+
+        // ‡ª‘¥·Õª∑’ËµÈÕß°“√
+        if (appIndex >= 0 && appIndex < appCanvases.Length && appCanvases[appIndex] != null)
+        {
+            appCanvases[appIndex].SetActive(true);
+            Debug.Log($"Immediately opened app index: {appIndex}");
+        }
+
+        // √’‡ø√™ UI
+        if (phoneUI != null)
+        {
+            phoneUI.RefreshUI();
+        }
     }
 
     private void CloseAllApps()
@@ -105,5 +188,13 @@ public class PhoneSystem : MonoBehaviour
             if (appCanvas != null)
                 appCanvas.SetActive(false);
         }
+    }
+
+    // ‡¡∏Õ¥ ”À√—∫ª‘¥·Õª∑—ÈßÀ¡¥·≈–‚∑√»—æ∑Ï
+    public void ClosePhoneAndApps()
+    {
+        CloseAllApps();
+        isPhoneOpen = false;
+        isAnimating = true;
     }
 }
