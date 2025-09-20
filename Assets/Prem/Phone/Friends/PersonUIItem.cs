@@ -4,89 +4,179 @@ using TMPro;
 
 public class PersonUIItem : MonoBehaviour
 {
-    [Header("UI Parts")]
+    [Header("UI References")]
     public Image personImage;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI descriptionText;
-    public Image statusIcon;
-    public Button clickButton;
+    public TextMeshProUGUI personNameText;
+    public Image stateIndicator;
+    public TextMeshProUGUI stateSymbolText; // Text สำหรับแสดงสัญลักษณ์
 
-    [Header("Status Sprites")]
-    public Sprite questionSprite;  // รูป ?
-    public Sprite crossSprite;     // รูป X
-    public Sprite checkSprite;     // รูป ✓
+    [Header("State Settings")]
+    public Color normalColor = Color.green;
+    public Color suspiciousColor = Color.yellow;
+    public Color dangerousColor = Color.red;
+    public Color defaultColor = Color.gray;
 
-    private PersonData myData;
-    private PhoneUI phoneManager;
+    [Header("State Symbols")]
+    public string normalSymbol = "✓"; // สัญลักษณ์สถานะปกติ
+    public string suspiciousSymbol = "?"; // สัญลักษณ์สถานะน่าสงสัย
+    public string dangerousSymbol = "!"; // สัญลักษณ์สถานะอันตราย
+    public string defaultSymbol = "?"; // สัญลักษณ์เริ่มต้น
 
-    public void Setup(PersonData data, PhoneUI manager)
+    private PersonData personData;
+    private PhoneUI phoneUI;
+    private Button button;
+
+    public void Setup(PersonData data, PhoneUI uiController)
     {
-        myData = data;
-        phoneManager = manager;
+        personData = data;
+        phoneUI = uiController;
 
-        // ใส่ข้อมูล
-        personImage.sprite = data.personImage;
-        nameText.text = data.personName;
-        descriptionText.text = data.description;
+        // อัปเดต UI
+        if (personImage != null)
+            personImage.sprite = data.personImage;
+        else
+            Debug.LogError("Person Image reference is missing!");
 
-        // ตั้งปุ่ม
-        clickButton.onClick.RemoveAllListeners();
-        clickButton.onClick.AddListener(OnClick);
+        if (personNameText != null)
+            personNameText.text = data.personName;
+        else
+            Debug.LogError("Person Name Text reference is missing!");
 
-        // แสดงสถานะ
-        UpdateIcon();
+        UpdateStateIndicator();
+
+        // ตั้งค่า Button
+        SetupButton();
     }
 
-    private void OnClick()
+    private void SetupButton()
     {
-        // เปลี่ยนสถานะ: ไม่มี → ? → X → ✓ → ไม่มี
-        switch (myData.currentState)
+        // หา Button component
+        button = GetComponent<Button>();
+        if (button == null)
         {
-            case SuspicionState.None:
-                myData.currentState = SuspicionState.Question;
-                break;
-            case SuspicionState.Question:
-                myData.currentState = SuspicionState.Cross;
-                break;
-            case SuspicionState.Cross:
-                myData.currentState = SuspicionState.Check;
-                break;
-            case SuspicionState.Check:
-                myData.currentState = SuspicionState.None;
-                break;
+            button = gameObject.AddComponent<Button>();
         }
 
-        UpdateIcon();
-        phoneManager.SaveData(); // บันทึกทันที
+        // ตั้งค่า transition type เป็น None เพื่อป้องกันการเปลี่ยนสี
+        button.transition = Selectable.Transition.None;
+
+        // ลบ listeners เก่าและเพิ่มใหม่
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(OnItemClick);
+
+        // ตั้งค่าให้ไม่ interactable ถ้าไม่มีข้อมูล
+        button.interactable = (personData != null);
     }
 
-    private void UpdateIcon()
+    public void UpdateStateIndicator()
     {
-        switch (myData.currentState)
+        if (stateIndicator != null && personData != null)
         {
-            case SuspicionState.None:
-                statusIcon.gameObject.SetActive(false);
-                break;
-            case SuspicionState.Question:
-                statusIcon.gameObject.SetActive(true);
-                statusIcon.sprite = questionSprite;
-                statusIcon.color = Color.yellow;
-                break;
-            case SuspicionState.Cross:
-                statusIcon.gameObject.SetActive(true);
-                statusIcon.sprite = crossSprite;
-                statusIcon.color = Color.red;
-                break;
-            case SuspicionState.Check:
-                statusIcon.gameObject.SetActive(true);
-                statusIcon.sprite = checkSprite;
-                statusIcon.color = Color.green;
-                break;
+            // ตั้งค่าสีและสัญลักษณ์ตามสถานะ
+            switch (personData.currentState)
+            {
+                case SuspicionState.Normal:
+                    stateIndicator.color = normalColor;
+                    SetStateSymbol(normalSymbol, normalColor);
+                    break;
+                case SuspicionState.Suspicious:
+                    stateIndicator.color = suspiciousColor;
+                    SetStateSymbol(suspiciousSymbol, suspiciousColor);
+                    break;
+                case SuspicionState.Dangerous:
+                    stateIndicator.color = dangerousColor;
+                    SetStateSymbol(dangerousSymbol, dangerousColor);
+                    break;
+                default:
+                    stateIndicator.color = defaultColor;
+                    SetStateSymbol(defaultSymbol, defaultColor);
+                    break;
+            }
+
+            Debug.Log($"Updated state indicator for {personData.personName} to {personData.currentState}");
         }
     }
 
-    public void RefreshIcon()
+    private void SetStateSymbol(string symbol, Color color)
     {
-        UpdateIcon();
+        // ตั้งค่าสัญลักษณ์ถ้ามี Text component
+        if (stateSymbolText != null)
+        {
+            stateSymbolText.text = symbol;
+            stateSymbolText.color = color;
+        }
+        else
+        {
+            // ถ้าไม่มี Text component ให้ลองหาอัตโนมัติ
+            stateSymbolText = GetComponentInChildren<TextMeshProUGUI>();
+            if (stateSymbolText != null)
+            {
+                stateSymbolText.text = symbol;
+                stateSymbolText.color = color;
+            }
+        }
+    }
+
+    // เรียกเมื่อคลิกที่アイเทม
+    private void OnItemClick()
+    {
+        if (personData == null) return;
+
+        Debug.Log($"Clicked on {personData.personName}");
+
+        // เปลี่ยนสถานะเมื่อคลิก
+        SwitchToNextState();
+
+        // บันทึกข้อมูล
+        if (phoneUI != null)
+        {
+            phoneUI.SaveData();
+        }
+    }
+
+    private void SwitchToNextState()
+    {
+        if (personData != null)
+        {
+            // เปลี่ยนไปยังสถานะถัดไป
+            switch (personData.currentState)
+            {
+                case SuspicionState.Normal:
+                    personData.currentState = SuspicionState.Suspicious;
+                    break;
+                case SuspicionState.Suspicious:
+                    personData.currentState = SuspicionState.Dangerous;
+                    break;
+                case SuspicionState.Dangerous:
+                    personData.currentState = SuspicionState.Normal;
+                    break;
+            }
+
+            // อัปเดตสีและสัญลักษณ์
+            UpdateStateIndicator();
+
+            Debug.Log($"{personData.personName} state changed to: {personData.currentState}");
+        }
+    }
+
+    // เมธอดสำหรับเปลี่ยนสถานะจากภายนอก
+    public void SetState(SuspicionState newState)
+    {
+        if (personData != null)
+        {
+            personData.currentState = newState;
+            UpdateStateIndicator();
+        }
+    }
+
+    // ตรวจสอบว่า GameObject ยังอยู่
+    private void OnEnable()
+    {
+        Debug.Log($"{gameObject.name} is enabled");
+    }
+
+    private void OnDisable()
+    {
+        Debug.Log($"{gameObject.name} is disabled");
     }
 }

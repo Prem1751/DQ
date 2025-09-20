@@ -11,12 +11,14 @@ public class InventoryManager : MonoBehaviour
     [Header("UI References")]
     public GameObject inventoryPanel;
     public Transform itemsParent; // Content ของ ScrollView
+    public GameObject itemSlotPrefab; // Prefab สำหรับแต่ละช่องไอเท็ม
+
+    [Header("Item Display")]
     public Image itemDisplay;
     public TMP_Text itemNameText;
     public TMP_Text itemDescText;
 
     private bool isInventoryOpen = false;
-    private int selectedIndex = -1;
 
     void Awake()
     {
@@ -25,9 +27,11 @@ public class InventoryManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
+            // เปิด Inventory ทันทีเมื่อเริ่มเกม
             if (inventoryPanel != null)
             {
-                inventoryPanel.SetActive(false);
+                inventoryPanel.SetActive(true);
+                isInventoryOpen = true;
             }
             else
             {
@@ -42,7 +46,7 @@ public class InventoryManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.I))
         {
             ToggleInventory();
         }
@@ -52,15 +56,6 @@ public class InventoryManager : MonoBehaviour
     {
         isInventoryOpen = !isInventoryOpen;
         inventoryPanel.SetActive(isInventoryOpen);
-
-        if (isInventoryOpen)
-        {
-            UpdateInventoryUI();
-            if (items.Count > 0 && selectedIndex == -1)
-            {
-                SelectItem(0);
-            }
-        }
     }
 
     public void AddItem(Item newItem)
@@ -68,16 +63,11 @@ public class InventoryManager : MonoBehaviour
         items.Add(newItem);
         Debug.Log($"เพิ่มไอเท็ม: {newItem.itemName} (Total: {items.Count})");
 
-        if (isInventoryOpen)
-        {
-            UpdateInventoryUI();
+        // อัพเดท UI ทันทีเมื่อเพิ่มไอเท็ม
+        UpdateInventoryUI();
 
-            // เลือกไอเท็มที่เพิ่งเพิ่มเข้ามา
-            if (items.Count > 0)
-            {
-                SelectItem(items.Count - 1);
-            }
-        }
+        // แสดงไอเท็มล่าสุดทันที
+        DisplayItemDetails(newItem);
     }
 
     void UpdateInventoryUI()
@@ -88,86 +78,67 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
-        // ตรวจสอบและสร้างช่องเพิ่มถ้าจำเป็น
-        while (itemsParent.childCount < items.Count)
+        // ลบช่องเก่าทั้งหมด
+        foreach (Transform child in itemsParent)
         {
-            GameObject newSlot = Instantiate(itemsParent.GetChild(0).gameObject, itemsParent);
-            newSlot.name = "ItemSlot_" + itemsParent.childCount;
+            Destroy(child.gameObject);
         }
 
-        // อัพเดททุกช่อง
-        for (int i = 0; i < itemsParent.childCount; i++)
+        // สร้างช่องใหม่ตามจำนวนไอเท็ม
+        for (int i = 0; i < items.Count; i++)
         {
-            Transform slot = itemsParent.GetChild(i);
-            if (slot.childCount > 0)
-            {
-                Image icon = slot.GetChild(0).GetComponent<Image>();
+            // สร้างช่องใหม่
+            GameObject newSlot = Instantiate(itemSlotPrefab, itemsParent);
+            newSlot.name = "ItemSlot_" + i;
 
-                if (i < items.Count)
-                {
-                    // แสดงไอเท็มที่มี
-                    icon.sprite = items[i].icon;
-                    icon.gameObject.SetActive(true);
-
-                    // ตั้งค่าปุ่มคลิก
-                    Button btn = slot.GetComponent<Button>();
-                    int itemIndex = i;
-                    btn.onClick.RemoveAllListeners();
-                    btn.onClick.AddListener(() => SelectItem(itemIndex));
-                }
-                else
-                {
-                    // ปิดช่องที่ไม่มีไอเท็ม
-                    icon.gameObject.SetActive(false);
-                }
-            }
-        }
-
-        // อัพเดทการแสดงผลไอเท็มที่เลือก
-        if (selectedIndex >= 0 && selectedIndex < items.Count)
-        {
-            UpdateSelectedItemDisplay();
-        }
-        else if (items.Count > 0)
-        {
-            SelectItem(0);
+            // อัพเดท UI ของช่อง
+            UpdateSlotUI(newSlot, items[i]);
         }
     }
 
-    void SelectItem(int index)
+    void UpdateSlotUI(GameObject slot, Item item)
     {
-        if (index < 0 || index >= items.Count) return;
+        // หา component ต่างๆ ใน slot
+        Transform iconTransform = slot.transform.Find("Icon");
+        Transform nameTextTransform = slot.transform.Find("NameText");
+        Transform descTextTransform = slot.transform.Find("DescText");
 
-        selectedIndex = index;
-        UpdateSelectedItemDisplay();
-    }
-
-    void UpdateSelectedItemDisplay()
-    {
-        Item selected = items[selectedIndex];
-        if (itemDisplay != null) itemDisplay.sprite = selected.icon;
-        if (itemNameText != null) itemNameText.text = selected.itemName;
-        if (itemDescText != null) itemDescText.text = selected.description;
-
-        Debug.Log($"เลือกไอเท็ม: {selected.itemName} (Index: {selectedIndex})");
-    }
-
-    public void RemoveItem(int index)
-    {
-        if (index < 0 || index >= items.Count) return;
-
-        items.RemoveAt(index);
-
-        // ปรับ selectedIndex ถ้าจำเป็น
-        if (selectedIndex == index)
+        if (iconTransform != null)
         {
-            selectedIndex = -1;
-        }
-        else if (selectedIndex > index)
-        {
-            selectedIndex--;
+            Image icon = iconTransform.GetComponent<Image>();
+            if (icon != null) icon.sprite = item.icon;
         }
 
-        UpdateInventoryUI();
+        if (nameTextTransform != null)
+        {
+            TMP_Text nameText = nameTextTransform.GetComponent<TMP_Text>();
+            if (nameText != null) nameText.text = item.itemName;
+        }
+
+        if (descTextTransform != null)
+        {
+            TMP_Text descText = descTextTransform.GetComponent<TMP_Text>();
+            if (descText != null) descText.text = item.description;
+        }
+    }
+
+    void DisplayItemDetails(Item item)
+    {
+        // แสดงรายละเอียดไอเท็มที่เพิ่งเก็บได้ทันที
+        if (itemDisplay != null) itemDisplay.sprite = item.icon;
+        if (itemNameText != null) itemNameText.text = item.itemName;
+        if (itemDescText != null) itemDescText.text = item.description;
+
+        Debug.Log($"แสดงไอเท็ม: {item.itemName}");
+    }
+
+    public void RemoveItem(Item itemToRemove)
+    {
+        if (items.Contains(itemToRemove))
+        {
+            items.Remove(itemToRemove);
+            UpdateInventoryUI();
+            Debug.Log($"ลบไอเท็ม: {itemToRemove.itemName}");
+        }
     }
 }
