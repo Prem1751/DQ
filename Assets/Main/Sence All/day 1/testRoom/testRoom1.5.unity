@@ -258,7 +258,7 @@ MonoBehaviour:
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
-  sceneNameToLoad: 
+  sceneNameToLoad: Q6
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
