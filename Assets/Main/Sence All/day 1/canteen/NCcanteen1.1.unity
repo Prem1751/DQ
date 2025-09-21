@@ -1364,7 +1364,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0, b: 0.82416964, a: 1}
@@ -1413,7 +1413,7 @@ MonoBehaviour:
   dialogueLines:
   - text: "\u0E04\u0E19\u0E19\u0E35\u0E49\u0E04\u0E37\u0E2D?"
     characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 158472470585449025, guid: d6de88a9f7957c440a5e40131d6186f8, type: 3}
     voiceOver: {fileID: 0}
   - text: "\u0E04\u0E19\u0E19\u0E35\u0E49\u0E0A\u0E37\u0E48\u0E2D\u0E40\u0E0A\u0E19\u0E19\u0E48\u0E30
       \u0E2A\u0E48\u0E27\u0E19\u0E19\u0E35\u0E48\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E19\u0E2A\u0E21\u0E31\u0E22\u0E40\u0E14\u0E47\u0E01\u0E40\u0E23\u0E32\u0E0A\u0E37\u0E48\u0E2D\u0E0B\u0E34\u0E19 "
@@ -1427,7 +1427,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
   - text: "\u0E2D\u0E4B\u0E2D \u0E40\u0E0A\u0E19\u0E17\u0E35\u0E48\u0E2D\u0E22\u0E39\u0E48\u0E2B\u0E49\u0E2D\u0E07\u0E1A\u0E35\u0E19\u0E35\u0E48\u0E40\u0E2D\u0E07"
     characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 158472470585449025, guid: d6de88a9f7957c440a5e40131d6186f8, type: 3}
     voiceOver: {fileID: 0}
   - text: "*\u0E04\u0E19\u0E19\u0E35\u0E49\u0E44\u0E07\u0E17\u0E35\u0E48\u0E40\u0E23\u0E32\u0E40\u0E25\u0E48\u0E32\u0E43\u0E2B\u0E49\u0E1F\u0E31\u0E07\u0E1A\u0E48\u0E2D\u0E22\u0E46
       \u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1F\u0E19\u0E40\u0E23\u0E32*"
@@ -1436,7 +1436,7 @@ MonoBehaviour:
     voiceOver: {fileID: 0}
   - text: "\u0E2B\u0E49\u0E30"
     characterName: "\u0E0B\u0E35\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 158472470585449025, guid: d6de88a9f7957c440a5e40131d6186f8, type: 3}
     voiceOver: {fileID: 0}
   - text: "\u0E0A\u0E39\u0E48\u0E27! \u0E40\u0E23\u0E37\u0E48\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E40\u0E01\u0E47\u0E1A\u0E44\u0E27\u0E40\u0E49\u0E1B\u0E47\u0E19\u0E04\u0E27\u0E32\u0E21\u0E25\u0E31\u0E1A\u0E19\u0E30"
     characterName: "\u0E14\u0E32\u0E23\u0E34\u0E19"
@@ -3727,6 +3727,7 @@ GameObject:
   - component: {fileID: 596103439}
   - component: {fileID: 596103441}
   - component: {fileID: 596103440}
+  - component: {fileID: 596103442}
   m_Layer: 0
   m_Name: "\u0E44\u0E21\u0E48\u0E21\u0E35\u0E0A\u0E37\u0E48\u0E2D 410_20250613103733
     (2) (1)_0"
@@ -3814,7 +3815,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 8512312652041124779, guid: d0552a2dab9da9c499d8bb6634ccc6c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3827,6 +3828,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &596103442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596103438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93c62fec6ad4341a3491dff3d40fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPrefab: {fileID: 3201293527369545982, guid: 5c9cabab458e823449bf2a7849623666, type: 3}
+  activationDistance: 5
+  destroyWhenFar: 1
+  sortingLayerName: Default
+  orderInLayer: -1
 --- !u!1 &608090666
 GameObject:
   m_ObjectHideFlags: 0
@@ -4662,7 +4680,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites: []
@@ -4727,7 +4747,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7660,7 +7680,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 5432003238721518019, guid: 0f6014803f8e32e498779d7887c0cd68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -7811,7 +7831,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0, b: 0.075844765, a: 1}

@@ -47,6 +47,9 @@ TagManager:
   - name: Overlay
     uniqueID: 216032883
     locked: 0
+  - name: light
+    uniqueID: 1962378495
+    locked: 0
   - name: Object
     uniqueID: 1830920297
     locked: 0

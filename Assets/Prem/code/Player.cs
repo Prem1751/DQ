@@ -14,15 +14,17 @@ public class SimpleRunMovement : MonoBehaviour
     [SerializeField] private string idleBool = "IsIdle";
     [SerializeField] private string walkBool = "IsWalking";
     [SerializeField] private string runBool = "IsRunning";
+    [SerializeField] private string attackBool = "IsAttacking"; // เพิ่มพารามิเตอร์การโจมตี
     [SerializeField] private string speedParam = "Speed";
+    [SerializeField] private string directionParam = "Direction"; // พารามิเตอร์ทิศทาง
 
     [Header("Visual Settings")]
     [SerializeField] private bool flipSprite = true;
     [SerializeField] private ParticleSystem runParticles;
 
     [Header("Map Boundaries")]
-    [SerializeField] private SpriteRenderer[] backgroundSprites; // Assign all background sprites in the inspector
-    [SerializeField] private float edgePadding = 0.5f; // Padding to prevent character from going off-screen
+    [SerializeField] private SpriteRenderer[] backgroundSprites;
+    [SerializeField] private float edgePadding = 0.5f;
 
     [Header("References")]
     [SerializeField] private Rigidbody2D rb;
@@ -31,11 +33,14 @@ public class SimpleRunMovement : MonoBehaviour
 
     private float horizontalInput;
     private bool isRunning;
+    private bool isAttacking; // สถานะการโจมตี
     private bool movementEnabled = true;
     private float currentSpeed;
     private bool isFacingRight = true;
+    private bool isMovingRight = true; // ทิศทางการเคลื่อนที่ปัจจุบัน
     private float minXBoundary;
     private float maxXBoundary;
+    private float idleDirection = 1f; // ทิศทางเริ่มต้นเมื่อหยุด (1 = ขวา, -1 = ซ้าย)
 
     private void Awake()
     {
@@ -59,10 +64,7 @@ public class SimpleRunMovement : MonoBehaviour
             return;
         }
 
-        // Initialize with first sprite's bounds
         Bounds combinedBounds = backgroundSprites[0].bounds;
-
-        // Combine bounds of all background sprites
         for (int i = 1; i < backgroundSprites.Length; i++)
         {
             if (backgroundSprites[i] != null)
@@ -71,11 +73,8 @@ public class SimpleRunMovement : MonoBehaviour
             }
         }
 
-        // Calculate boundaries with padding
         minXBoundary = combinedBounds.min.x + edgePadding;
         maxXBoundary = combinedBounds.max.x - edgePadding;
-
-        Debug.Log($"Map boundaries calculated: MinX={minXBoundary}, MaxX={maxXBoundary}");
     }
 
     private void Update()
@@ -83,6 +82,7 @@ public class SimpleRunMovement : MonoBehaviour
         if (!movementEnabled) return;
 
         GetInput();
+        HandleAttackInput(); // จัดการการโจมตี
         UpdateAnimations();
     }
 
@@ -97,35 +97,98 @@ public class SimpleRunMovement : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         isRunning = Input.GetKey(runKey);
 
-        // Simplified sprite flipping - always update when there's input
+        // อัปเดตทิศทางการเคลื่อนที่
+        if (horizontalInput != 0)
+        {
+            isMovingRight = horizontalInput > 0;
+        }
+
+        // จัดการการพลิก sprite ตามการเคลื่อนที่
         if (flipSprite && horizontalInput != 0)
         {
             bool shouldFaceRight = horizontalInput > 0;
-            isFacingRight = shouldFaceRight;
-            FlipCharacter();
+
+            if (shouldFaceRight != isFacingRight)
+            {
+                isFacingRight = shouldFaceRight;
+                FlipCharacter();
+            }
         }
+    }
+
+    private void HandleAttackInput()
+    {
+        // ตรวจสอบการกดปุ่มโจมตี (ตัวอย่างใช้ Space)
+        if (Input.GetKeyDown(KeyCode.Space) && !isAttacking)
+        {
+            StartAttack();
+        }
+    }
+
+    private void StartAttack()
+    {
+        isAttacking = true;
+
+        // ตั้งค่าทิศทางโจมตีตามทิศทางที่กำลังหันอยู่
+        float attackDirection = isFacingRight ? 1f : -1f;
+        animator.SetFloat(directionParam, attackDirection);
+
+        // เริ่มอนิเมชันโจมตี
+        animator.SetBool(attackBool, true);
+
+        // พักการเคลื่อนไหวชั่วคราวขณะโจมตี
+        movementEnabled = false;
+
+        Debug.Log($"เริ่มโจมตี ทิศทาง: {(attackDirection > 0 ? "ขวา" : "ซ้าย")}");
+
+        // รีเซ็ตสถานะโจมตีหลังจากอนิเมชันจบ
+        Invoke("EndAttack", 0.5f); // ปรับเวลาตามความยาวอนิเมชันโจมตี
+    }
+
+    private void EndAttack()
+    {
+        isAttacking = false;
+        animator.SetBool(attackBool, false);
+        movementEnabled = true;
+
+        // กลับไปหันทิศทางตามการเคลื่อนที่
+        UpdateFacingDirection();
     }
 
     private void FlipCharacter()
     {
-        // Use SpriteRenderer.flipX for proper flipping
         if (spriteRenderer != null)
         {
-            spriteRenderer.flipX = isFacingRight; // true = face left, false = face right (swapped)
-            Debug.Log($"Flipping sprite: isFacingRight={isFacingRight}, flipX={spriteRenderer.flipX}");
+            spriteRenderer.flipX = !isFacingRight;
         }
         else
         {
-            // Fallback to scale method if no SpriteRenderer
             Vector3 scale = transform.localScale;
-            scale.x = Mathf.Abs(scale.x) * (isFacingRight ? -1 : 1); // Swapped
+            scale.x = Mathf.Abs(scale.x) * (isFacingRight ? 1 : -1);
             transform.localScale = scale;
-            Debug.Log($"Flipping scale: isFacingRight={isFacingRight}, scale.x={scale.x}");
+        }
+    }
+
+    private void UpdateFacingDirection()
+    {
+        // อัปเดตทิศทางที่หันตามการเคลื่อนที่
+        if (horizontalInput != 0)
+        {
+            isFacingRight = horizontalInput > 0;
+            FlipCharacter();
+        }
+        else if (!isAttacking)
+        {
+            // เมื่อหยุดเคลื่อนที่ ให้หันตามทิศทางเริ่มต้น
+            isFacingRight = idleDirection > 0;
+            FlipCharacter();
         }
     }
 
     private void HandleMovement()
     {
+        if (isAttacking) return; // ไม่เคลื่อนที่ขณะโจมตี
+
         float targetSpeed = isRunning ? runSpeed : walkSpeed;
         targetSpeed *= horizontalInput;
 
@@ -135,13 +198,9 @@ public class SimpleRunMovement : MonoBehaviour
             (Mathf.Abs(targetSpeed) > 0.1f ? acceleration : deceleration) * Time.fixedDeltaTime
         );
 
-        // Calculate new position
         Vector2 newPosition = rb.position + Vector2.right * currentSpeed * Time.fixedDeltaTime;
-
-        // Clamp position to boundaries
         newPosition.x = Mathf.Clamp(newPosition.x, minXBoundary, maxXBoundary);
 
-        // Only move if we're not at the boundary or moving away from it
         if ((newPosition.x > rb.position.x && newPosition.x < maxXBoundary) ||
             (newPosition.x < rb.position.x && newPosition.x > minXBoundary) ||
             (newPosition.x == rb.position.x))
@@ -149,6 +208,12 @@ public class SimpleRunMovement : MonoBehaviour
             rb.MovePosition(newPosition);
         }
 
+        // จัดการ particle effects
+        HandleParticles();
+    }
+
+    private void HandleParticles()
+    {
         if (runParticles != null)
         {
             if (Mathf.Abs(currentSpeed) > 0.1f && isRunning && !runParticles.isPlaying)
@@ -162,26 +227,41 @@ public class SimpleRunMovement : MonoBehaviour
     {
         if (animator == null) return;
 
-        bool isMoving = Mathf.Abs(currentSpeed) > 0.1f;
+        bool isMoving = Mathf.Abs(currentSpeed) > 0.1f && !isAttacking;
         float speedPercent = Mathf.Abs(currentSpeed) / (isRunning ? runSpeed : walkSpeed);
 
-        animator.SetBool(idleBool, !isMoving);
+        // ตั้งค่าพารามิเตอร์อนิเมชัน
+        animator.SetBool(idleBool, !isMoving && !isAttacking);
         animator.SetBool(walkBool, isMoving && !isRunning);
         animator.SetBool(runBool, isMoving && isRunning);
         animator.SetFloat(speedParam, speedPercent);
+
+        // ตั้งค่าทิศทางในอนิเมชัน
+        float currentDirection = isMoving ? (isMovingRight ? 1f : -1f) : idleDirection;
+        animator.SetFloat(directionParam, currentDirection);
     }
 
     public void SetMovement(bool canMove) => movementEnabled = canMove;
     public bool IsMoving() => movementEnabled && Mathf.Abs(horizontalInput) > 0.1f;
     public bool IsRunning() => movementEnabled && isRunning;
+    public bool IsAttacking() => isAttacking;
 
-    // Call this when you add/remove background sprites at runtime
     public void UpdateBoundaries()
     {
         CalculateMapBoundaries();
     }
 
-    // Draw boundaries in editor for visualization
+    // ตั้งค่าทิศทางเริ่มต้นเมื่อหยุด
+    public void SetIdleDirection(float direction)
+    {
+        idleDirection = Mathf.Sign(direction);
+        if (!IsMoving() && !isAttacking)
+        {
+            isFacingRight = idleDirection > 0;
+            FlipCharacter();
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (!Application.isPlaying && backgroundSprites != null && backgroundSprites.Length > 0)
