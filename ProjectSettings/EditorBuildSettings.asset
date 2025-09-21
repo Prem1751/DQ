@@ -114,7 +114,7 @@ EditorBuildSettings:
     path: Assets/Main/Sence All/day 1/Ques/Q4.unity
     guid: a7631f8e946e3b04d9714c455e104441
   - enabled: 1
-    path: Assets/Main/Sence All/day 1/Ques/Q5.unity
+    path: Assets/Main/Sence All/day 1/Ques/Q6.unity
     guid: fa49698916872e845a327acce39f4684
   - enabled: 1
     path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ1.unity
@@ -158,6 +158,36 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/testRoom/no cafe/Quest/NCQ10.unity
     guid: 6ed809aeea54bd8448fa0fa0a1705f93
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/F1attmorning1.1.unity
+    guid: bc68fa61b14c0fa479ff91b0f35af4e5
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/canteen/NCcanteen1.1.unity
+    guid: c8b218d31ecff274687e15cd6ed2d1f3
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/F2attmorning1.1.unity
+    guid: af220eb5f2e4d694682402e900feadde
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/F1attmorning1.2.unity
+    guid: 52d58e7d640a1b14dbc244f55051c360
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/F2attmorning1.2.unity
+    guid: a0bdeb5ddfda26a459a401af7df92d94
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q5.unity
+    guid: ef7272317cd373f4cb265eb37e848a3e
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q7.unity
+    guid: 9c6e6310966b1cc43aeb7d560b3bb3df
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q8.unity
+    guid: 70e3649c69561934e88ba06ffb3d4599
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q10.unity
+    guid: 6a937dde3d3b7a74ab589eec1cf901c2
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/Ques/Q9.unity
+    guid: 201f1135e48d2224bae900fc77e76ce5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
