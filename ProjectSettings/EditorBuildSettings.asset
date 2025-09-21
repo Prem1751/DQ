@@ -161,7 +161,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/aftertest/morning/F1attmorning1.1.unity
     guid: bc68fa61b14c0fa479ff91b0f35af4e5
-  - enabled: 1
+  - enabled: 0
     path: Assets/Main/Sence All/day 1/canteen/NCcanteen1.1.unity
     guid: c8b218d31ecff274687e15cd6ed2d1f3
   - enabled: 1
@@ -188,6 +188,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/Ques/Q9.unity
     guid: 201f1135e48d2224bae900fc77e76ce5
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF2attmorning1.2.unity
+    guid: 91a3a5b265aa6d646a289d920c97951d
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF2attmorning1.1.unity
+    guid: 2b6c164bf09daab4d90e6c06dc419811
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF1attmorning1.2.unity
+    guid: 238254042ff8bc246983f43cf3344c6c
+  - enabled: 1
+    path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF1attmorning1.1.unity
+    guid: 9ab62f2742b38af4eafa21863676ed47
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

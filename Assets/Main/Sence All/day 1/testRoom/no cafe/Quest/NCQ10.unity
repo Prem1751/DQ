@@ -759,6 +759,7 @@ MonoBehaviour:
   items: []
   inventoryPanel: {fileID: 0}
   itemsParent: {fileID: 0}
+  itemSlotPrefab: {fileID: 0}
   itemDisplay: {fileID: 0}
   itemNameText: {fileID: 0}
   itemDescText: {fileID: 0}
@@ -1461,7 +1462,7 @@ MonoBehaviour:
   scoreForCorrectAnswer: 10
   scoreForPartialAnswer: 5
   feedbackDisplayTime: 2
-  nextSceneName: NCtestRoom1.6
+  nextSceneName: NCschoolaftest
 --- !u!223 &1138312724
 Canvas:
   m_ObjectHideFlags: 0

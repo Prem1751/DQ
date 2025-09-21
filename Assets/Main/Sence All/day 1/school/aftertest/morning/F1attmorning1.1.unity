@@ -1096,7 +1096,7 @@ MonoBehaviour:
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
-  sceneNameToLoad: NCcanteen1.1
+  sceneNameToLoad: canteen1
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
@@ -1719,10 +1719,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 8145675}
+  - {fileID: 1465107964}
+  - {fileID: 178390299}
   - {fileID: 1829833500}
   - {fileID: 1466344510}
   - {fileID: 2048083443}
   - {fileID: 1905915211}
-  - {fileID: 1465107964}
-  - {fileID: 178390299}
   - {fileID: 1445692845}

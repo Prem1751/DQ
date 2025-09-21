@@ -2093,8 +2093,7 @@ Transform:
   m_LocalPosition: {x: 1.459878, y: -0.3375179, z: -0.042854253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 687218054}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &463262695
@@ -3516,11 +3515,11 @@ Transform:
   m_GameObject: {fileID: 687218053}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 49.25, y: 0.3375179, z: 0.042854253}
+  m_LocalPosition: {x: 50.709877, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 404873046}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &687218055
 SpriteRenderer:
@@ -5412,7 +5411,7 @@ MonoBehaviour:
     requiredScore: 0
     scoreBasedSceneName: 
   - text: 
-    characterName: "**\u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E02\u0E27\u0E32\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E44\u0E1B\u0E0A\u0E31\u0E49\u0E19
+    characterName: "**\u0E40\u0E14\u0E34\u0E19\u0E44\u0E1B\u0E17\u0E32\u0E07\u0E0B\u0E49\u0E32\u0E22\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E44\u0E1B\u0E0A\u0E31\u0E49\u0E19
       3**"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -6721,7 +6720,7 @@ Transform:
   m_GameObject: {fileID: 1437326672}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.84, y: -1.54, z: 0}
+  m_LocalPosition: {x: 63.4, y: -1.54, z: 0}
   m_LocalScale: {x: 1.8559586, y: 1.8559586, z: 1.8559586}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9447,12 +9446,13 @@ RectTransform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 404873046}
+  - {fileID: 687218054}
   - {fileID: 1437326679}
   - {fileID: 501428121}
   - {fileID: 92414917}
   - {fileID: 1229078711}
   - {fileID: 12162292}
   - {fileID: 1295208948}
-  - {fileID: 404873046}
   - {fileID: 680938381}
   - {fileID: 1681538149}

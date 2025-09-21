@@ -301,6 +301,7 @@ MonoBehaviour:
   items: []
   inventoryPanel: {fileID: 0}
   itemsParent: {fileID: 0}
+  itemSlotPrefab: {fileID: 0}
   itemDisplay: {fileID: 0}
   itemNameText: {fileID: 0}
   itemDescText: {fileID: 0}
@@ -1792,7 +1793,7 @@ MonoBehaviour:
   scoreForCorrectAnswer: 10
   scoreForPartialAnswer: 5
   feedbackDisplayTime: 2
-  nextSceneName: testRoom1.4
+  nextSceneName: Q5
 --- !u!223 &1833124597
 Canvas:
   m_ObjectHideFlags: 0
