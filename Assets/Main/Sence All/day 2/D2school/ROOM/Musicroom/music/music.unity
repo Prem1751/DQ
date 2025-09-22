@@ -539,7 +539,7 @@ MonoBehaviour:
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
-  interactionRadius: 3
+  interactionRadius: 20
   interactKey: 101
   typingSpeed: 0.05
   useTypingEffect: 1

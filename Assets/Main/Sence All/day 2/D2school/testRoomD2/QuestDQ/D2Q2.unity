@@ -1081,7 +1081,7 @@ MonoBehaviour:
   scoreForCorrectAnswer: 10
   scoreForPartialAnswer: 5
   feedbackDisplayTime: 2
-  nextSceneName: Q2
+  nextSceneName: D2Q3
 --- !u!223 &944500155
 Canvas:
   m_ObjectHideFlags: 0
