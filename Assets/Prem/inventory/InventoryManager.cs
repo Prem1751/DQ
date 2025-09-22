@@ -10,8 +10,8 @@ public class InventoryManager : MonoBehaviour
 
     [Header("UI References")]
     public GameObject inventoryPanel;
-    public Transform itemsParent; // Content ของ ScrollView
-    public GameObject itemSlotPrefab; // Prefab สำหรับแต่ละช่องไอเท็ม
+    public Transform itemsParent;
+    public GameObject itemSlotPrefab;
 
     [Header("Item Display")]
     public Image itemDisplay;
@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // เปิด Inventory ทันทีเมื่อเริ่มเกม
             if (inventoryPanel != null)
             {
                 inventoryPanel.SetActive(true);
@@ -62,15 +61,12 @@ public class InventoryManager : MonoBehaviour
     {
         items.Add(newItem);
         Debug.Log($"เพิ่มไอเท็ม: {newItem.itemName} (Total: {items.Count})");
-
-        // อัพเดท UI ทันทีเมื่อเพิ่มไอเท็ม
         UpdateInventoryUI();
-
-        // แสดงไอเท็มล่าสุดทันที
         DisplayItemDetails(newItem);
     }
 
-    void UpdateInventoryUI()
+    // เปลี่ยนจาก private เป็น public
+    public void UpdateInventoryUI()
     {
         if (itemsParent == null)
         {
@@ -87,18 +83,14 @@ public class InventoryManager : MonoBehaviour
         // สร้างช่องใหม่ตามจำนวนไอเท็ม
         for (int i = 0; i < items.Count; i++)
         {
-            // สร้างช่องใหม่
             GameObject newSlot = Instantiate(itemSlotPrefab, itemsParent);
             newSlot.name = "ItemSlot_" + i;
-
-            // อัพเดท UI ของช่อง
             UpdateSlotUI(newSlot, items[i]);
         }
     }
 
     void UpdateSlotUI(GameObject slot, Item item)
     {
-        // หา component ต่างๆ ใน slot
         Transform iconTransform = slot.transform.Find("Icon");
         Transform nameTextTransform = slot.transform.Find("NameText");
         Transform descTextTransform = slot.transform.Find("DescText");
@@ -124,11 +116,9 @@ public class InventoryManager : MonoBehaviour
 
     void DisplayItemDetails(Item item)
     {
-        // แสดงรายละเอียดไอเท็มที่เพิ่งเก็บได้ทันที
         if (itemDisplay != null) itemDisplay.sprite = item.icon;
         if (itemNameText != null) itemNameText.text = item.itemName;
         if (itemDescText != null) itemDescText.text = item.description;
-
         Debug.Log($"แสดงไอเท็ม: {item.itemName}");
     }
 
