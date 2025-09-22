@@ -490,7 +490,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites:
@@ -556,7 +558,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1066,6 +1068,7 @@ GameObject:
   - component: {fileID: 1123793254}
   - component: {fileID: 1123793253}
   - component: {fileID: 1123793252}
+  - component: {fileID: 1123793255}
   m_Layer: 0
   m_Name: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
   m_TagString: Untagged
@@ -1316,7 +1319,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1344,6 +1347,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1123793255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1123793251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93c62fec6ad4341a3491dff3d40fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPrefab: {fileID: 3201293527369545982, guid: 5c9cabab458e823449bf2a7849623666, type: 3}
+  activationDistance: 20
+  destroyWhenFar: 1
+  sortingLayerName: Default
+  orderInLayer: -1
 --- !u!1 &1494051627
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1375,7 @@ GameObject:
   - component: {fileID: 1494051629}
   - component: {fileID: 1494051628}
   - component: {fileID: 1494051630}
+  - component: {fileID: 1494051631}
   m_Layer: 0
   m_Name: "\u0E43\u0E1A\u0E25\u0E07\u0E0A\u0E37\u0E48\u0E2D"
   m_TagString: Untagged
@@ -1369,7 +1390,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494051627}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1404,7 +1425,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1426,7 +1447,7 @@ Transform:
   m_GameObject: {fileID: 1494051627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.74, y: -0.71, z: 0}
+  m_LocalPosition: {x: -2.62, y: -0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1450,7 +1471,7 @@ MonoBehaviour:
   speakerImage: {fileID: 2083382222}
   defaultNpcName: NPC
   dialogueLines:
-  - text: "\u0E43\u0E1A\u0E25\u0E07\u0E0A\u0E37\u0E48\u0E2D\u0E43\u0E19\u0E2B\u0E49\u0E2D\u0E07\u0E1E\u0E22\u0E32\u0E1A\u0E32\u0E25\u0E02\u0E2D\u0E07\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E41\u0E25\u0E30\u0E02\u0E27\u0E14\u0E22\u0E32\u0E41\u0E01\u0E49\u0E2D\u0E32\u0E40\u0E08\u0E35\u0E22\u0E19\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49"
+  - text: "\u0E1E\u0E1A\u0E43\u0E1A\u0E25\u0E07\u0E0A\u0E37\u0E48\u0E2D\u0E43\u0E19\u0E2B\u0E49\u0E2D\u0E07\u0E1E\u0E22\u0E32\u0E1A\u0E32\u0E25\u0E02\u0E2D\u0E07\u0E44\u0E2D\u0E23\u0E34\u0E19\u0E41\u0E25\u0E30\u0E02\u0E27\u0E14\u0E22\u0E32\u0E41\u0E01\u0E49\u0E2D\u0E32\u0E40\u0E08\u0E35\u0E22\u0E19\u0E17\u0E35\u0E48\u0E22\u0E31\u0E07\u0E44\u0E21\u0E48\u0E44\u0E14\u0E49\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E0A\u0E49"
     characterName: 
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -1496,6 +1517,69 @@ MonoBehaviour:
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
+  - text: "\u0E01\u0E14  F \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E01\u0E47\u0E1A\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19"
+    characterName: Tip
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2B\u0E49\u0E2D\u0E07\u0E19\u0E35\u0E49\u0E21\u0E35\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19
+      2 \u0E0A\u0E34\u0E49\u0E19 (\u0E01\u0E14\u0E40\u0E01\u0E47\u0E1A 2 \u0E04\u0E23\u0E31\u0E49\u0E07)"
+    characterName: Tip
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2B\u0E32\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07\u0E43\u0E2B\u0E49\u0E01\u0E14\u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07"
+    characterName: Tip
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices:
+    - "\u0E40\u0E01\u0E47\u0E1A\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19\u0E01\u0E48\u0E2D\u0E19"
+    - "\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07"
+    choiceScores: 
+    choiceLeadsTo: ffffffff06000000
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E33\u0E25\u0E31\u0E07\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07...."
+    characterName: Tip
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: D2F1
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   interactionRadius: 2
   interactKey: 101
   typingSpeed: 0.05
@@ -1511,6 +1595,23 @@ MonoBehaviour:
   choiceTexts: []
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &1494051631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494051627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93c62fec6ad4341a3491dff3d40fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPrefab: {fileID: 3201293527369545982, guid: 5c9cabab458e823449bf2a7849623666, type: 3}
+  activationDistance: 20
+  destroyWhenFar: 1
+  sortingLayerName: Default
+  orderInLayer: -1
 --- !u!1 &1770716127
 GameObject:
   m_ObjectHideFlags: 0

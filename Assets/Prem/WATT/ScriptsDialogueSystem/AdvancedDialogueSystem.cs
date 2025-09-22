@@ -113,13 +113,30 @@ public class AdvancedDialogueSystem : MonoBehaviour
             audioSource.playOnAwake = false;
         }
 
-        // ตั้งค่าปุ่มตัวเลือก
-        for (int i = 0; i < choiceButtons.Length; i++)
+        // ✅ แก้ไขส่วนนี้ - ตั้งค่าปุ่มตัวเลือก
+        if (choiceButtons != null)
         {
-            int choiceIndex = i;
-            choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
+            for (int i = 0; i < choiceButtons.Length; i++)
+            {
+                int choiceIndex = i;
+
+                if (choiceButtons[i] != null)
+                {
+                    choiceButtons[i].onClick.RemoveAllListeners(); // ลบ listener เดิม
+                    choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
+                }
+                else
+                {
+                    Debug.LogError($"Choice button at index {i} is null! Please assign in Inspector.", this);
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("ChoiceButtons array is null! Please assign in Inspector.", this);
         }
     }
+
 
     private void Update()
     {
@@ -283,34 +300,57 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
     private void ShowChoices(string[] choices)
     {
+        if (choices == null || choices.Length == 0)
+        {
+            Debug.LogError("No choices available!");
+            return;
+        }
+
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(true);
 
         for (int i = 0; i < choiceButtons.Length; i++)
         {
-            if (i < choices.Length)
+            if (i < choices.Length && choiceButtons[i] != null)
             {
                 choiceButtons[i].gameObject.SetActive(true);
-                choiceTexts[i].text = choices[i];
+                if (choiceTexts[i] != null)
+                {
+                    choiceTexts[i].text = choices[i];
+                }
             }
             else
             {
-                choiceButtons[i].gameObject.SetActive(false);
+                if (choiceButtons[i] != null)
+                {
+                    choiceButtons[i].gameObject.SetActive(false);
+                }
             }
         }
     }
 
     private void OnChoiceSelected(int choiceIndex)
     {
+        // ตรวจสอบความถูกต้องของ choiceIndex
+        DialogueLine currentLine = dialogueLines[currentLineIndex];
+
+        if (choiceIndex < 0 || choiceIndex >= currentLine.choices.Length)
+        {
+            Debug.LogError($"Invalid choice index: {choiceIndex}. Choices available: {currentLine.choices.Length}");
+            return;
+        }
+
         lastChoiceIndex = choiceIndex;
         choicePanel.SetActive(false);
 
-        DialogueLine currentLine = dialogueLines[currentLineIndex];
-
-        // เพิ่มคะแนนถ้ามี
-        if (choiceIndex < currentLine.choiceScores.Length)
+        // เพิ่มคะแนนถ้ามี และตรวจสอบขอบเขตของ array
+        if (currentLine.choiceScores != null && choiceIndex < currentLine.choiceScores.Length)
         {
             GameManager.Instance?.AddScore(currentLine.choiceScores[choiceIndex]);
+        }
+        else
+        {
+            Debug.LogWarning($"Choice scores array is null or index {choiceIndex} is out of range.");
         }
 
         // ตรวจสอบว่ามีบทสนทนาหลังเลือกหรือไม่
@@ -328,8 +368,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
         }
 
         // ตรวจสอบว่ามีการกำหนดบรรทัดต่อไปหรือไม่
-        if (currentLine.choiceLeadsTo != null &&
-            choiceIndex < currentLine.choiceLeadsTo.Length)
+        if (currentLine.choiceLeadsTo != null && choiceIndex < currentLine.choiceLeadsTo.Length)
         {
             int nextLine = currentLine.choiceLeadsTo[choiceIndex];
 
@@ -345,6 +384,14 @@ public class AdvancedDialogueSystem : MonoBehaviour
                 DisplayLine(dialogueLines[currentLineIndex]);
                 return;
             }
+            else
+            {
+                Debug.LogError($"Invalid next line index: {nextLine}. Dialogue lines available: {dialogueLines.Length}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Choice leads to array is null or index {choiceIndex} is out of range.");
         }
 
         // ไม่มีอะไรกำหนด - ไปบรรทัดต่อไป

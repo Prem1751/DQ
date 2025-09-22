@@ -805,7 +805,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites: []
@@ -870,7 +872,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -943,11 +945,6 @@ MonoBehaviour:
     characterName: "\u0E0B\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-  - text: "\u0E40\u0E08\u0E47\u0E14\u0E42\u0E21\u0E07\u0E04\u0E23\u0E36\u0E48\u0E07\u0E41\u0E25\u0E49\u0E27
-      \u0E2A\u0E32\u0E22\u0E41\u0E25\u0E49\u0E27 !"
-    characterName: "\u0E0B\u0E34\u0E19"
-    characterSprite: {fileID: 0}
-    voiceOver: {fileID: 0}
   interactionRadius: 2
   interactKey: 101
   typingSpeed: 0.05
@@ -959,7 +956,7 @@ MonoBehaviour:
   dialogueOpenSound: {fileID: 0}
   dialogueCloseSound: {fileID: 0}
   changeSceneAfterDialogue: 1
-  sceneNameToLoad: school1
+  sceneNameToLoad: school2.1
   sceneTransitionDelay: 1
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
@@ -1380,7 +1377,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 3102830789235636923, guid: b2207da59d4b1444e9d0e0683d9223ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1413,7 +1410,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites: []
