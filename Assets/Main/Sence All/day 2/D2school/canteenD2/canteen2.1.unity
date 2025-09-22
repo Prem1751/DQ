@@ -3786,7 +3786,7 @@ MonoBehaviour:
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites:
-  - {fileID: 0}
+  - {fileID: 1966538662}
   edgePadding: 0.5
   rb: {fileID: 768658385}
   spriteRenderer: {fileID: 0}
@@ -3870,7 +3870,7 @@ Transform:
   m_GameObject: {fileID: 768658382}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.49, y: -1.91, z: 0}
+  m_LocalPosition: {x: 1.32, y: -1.91, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4556,6 +4556,7 @@ GameObject:
   - component: {fileID: 981473656}
   - component: {fileID: 981473655}
   - component: {fileID: 981473657}
+  - component: {fileID: 981473658}
   m_Layer: 0
   m_Name: "\u0E14\u0E32\u0E23\u0E34\u0E19"
   m_TagString: Untagged
@@ -4627,7 +4628,7 @@ Transform:
   m_GameObject: {fileID: 981473654}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4, y: -2.013648, z: 0}
+  m_LocalPosition: {x: 24.02, y: -2.013648, z: 0}
   m_LocalScale: {x: 0.27, y: 0.27, z: 0.27}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -4655,7 +4656,7 @@ MonoBehaviour:
       \u0E01\u0E47\u0E21\u0E35\u0E41\u0E15\u0E48\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E0B\u0E38\u0E1A\u0E0B\u0E34\u0E1A\u0E14\u0E31\u0E07\u0E44\u0E1B\u0E2B\u0E21\u0E14\r\n\u0E41\u0E25\u0E49\u0E27\u0E08\u0E39\u0E48\u0E46
       \u0E01\u0E47\u0E21\u0E35\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E1B\u0E23\u0E30\u0E01\u0E32\u0E28\u0E14\u0E31\u0E07\u0E02\u0E36\u0E49\u0E19"
     characterName: ...
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 158472470585449025, guid: d6de88a9f7957c440a5e40131d6186f8, type: 3}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices: []
@@ -4701,9 +4702,7 @@ MonoBehaviour:
     scoreBasedSceneName: 
   - text: "\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E191: \u0E40\u0E2B\u0E47\u0E19\u0E02\u0E48\u0E32\u0E27\u0E2B\u0E23\u0E37\u0E2D\u0E22\u0E31\u0E07
       \u0E17\u0E35\u0E48\u0E14\u0E32\u0E23\u0E34\u0E19\u0E42\u0E01\u0E07\u0E02\u0E49\u0E2D\u0E2A\u0E2D\u0E1A\r\n\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E192:
-      \u0E40\u0E2D\u0E2D \u0E40\u0E2B\u0E47\u0E19\u0E25\u0E30 \u0E01\u0E47\u0E27\u0E48\u0E32\u0E2D\u0E22\u0E39\u0E48\u0E17\u0E33\u0E44\u0E21\u0E44\u0E14\u0E49\u0E04\u0E30\u0E41\u0E19\u0E19\u0E14\u0E35\u0E15\u0E25\u0E2D\u0E14\n\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E193:
-      \u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E19\u0E35\u0E48\u0E22\u0E19\u0E30! \u0E09\u0E31\u0E19\u0E27\u0E48\u0E32\u0E14\u0E32\u0E23\u0E34\u0E19\u0E01\u0E47\u0E43\u0E2A\u0E46
-      \u0E19\u0E30\u0E41\u0E01 \u0E44\u0E21\u0E48\u0E19\u0E48\u0E32\u0E42\u0E01\u0E07\u0E02\u0E49\u0E2D\u0E2A\u0E2D\u0E1A\u0E2B\u0E19\u0E2D\u0E01"
+      \u0E40\u0E2D\u0E2D \u0E40\u0E2B\u0E47\u0E19\u0E25\u0E30 \u0E01\u0E47\u0E27\u0E48\u0E32\u0E2D\u0E22\u0E39\u0E48\u0E17\u0E33\u0E44\u0E21\u0E44\u0E14\u0E49\u0E04\u0E30\u0E41\u0E19\u0E19\u0E14\u0E35\u0E15\u0E25\u0E2D\u0E14\n"
     characterName: "\u0E41\u0E0A\u0E17"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
@@ -4720,15 +4719,30 @@ MonoBehaviour:
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
+  - text: "\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E193: \u0E14\u0E32\u0E23\u0E34\u0E19\u0E40\u0E19\u0E35\u0E48\u0E22\u0E19\u0E30!
+      \u0E09\u0E31\u0E19\u0E27\u0E48\u0E32\u0E14\u0E32\u0E23\u0E34\u0E19\u0E01\u0E47\u0E43\u0E2A\u0E46
+      \u0E19\u0E30\u0E41\u0E01 \u0E44\u0E21\u0E48\u0E19\u0E48\u0E32\u0E42\u0E01\u0E07\u0E02\u0E49\u0E2D\u0E2A\u0E2D\u0E1A\u0E2B\u0E19\u0E2D\u0E01"
+    characterName: "\u0E41\u0E0A\u0E17"
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
   - text: "\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E191: \u0E04\u0E19\u0E40\u0E23\u0E32\u0E21\u0E31\u0E19\u0E23\u0E39\u0E49\u0E2B\u0E19\u0E49\u0E32\u0E44\u0E21\u0E48\u0E23\u0E39\u0E49\u0E43\u0E08\u0E2D\u0E22\u0E39\u0E48\u0E41\u0E25\u0E49\u0E27\r\n\u0E19\u0E31\u0E01\u0E40\u0E23\u0E35\u0E22\u0E194:
       \u0E40\u0E23\u0E32\u0E2D\u0E22\u0E48\u0E32\u0E40\u0E1E\u0E34\u0E48\u0E07\u0E23\u0E35\u0E1A\u0E15\u0E31\u0E14\u0E2A\u0E34\u0E19\u0E2D\u0E30\u0E44\u0E23\u0E01\u0E31\u0E19\u0E14\u0E35\u0E01\u0E27\u0E48\u0E32"
     characterName: "\u0E41\u0E0A\u0E17"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-    hasChoices: 1
-    choices:
-    - "\u0E2B\u0E49\u0E2D\u0E07\u0E01\u0E34\u0E08\u0E01\u0E23\u0E23\u0E21"
-    - "\u0E2B\u0E49\u0E2D\u0E07\u0E14\u0E19\u0E15\u0E23\u0E35"
+    hasChoices: 0
+    choices: []
     choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
@@ -4740,7 +4754,7 @@ MonoBehaviour:
     scoreBasedSceneName: 
   - text: "...\u0E2D\u0E30\u0E44\u0E23\u0E19\u0E30?"
     characterName: "\u0E0B\u0E34\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 158472470585449025, guid: d6de88a9f7957c440a5e40131d6186f8, type: 3}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices:
@@ -4761,7 +4775,7 @@ MonoBehaviour:
     characterName: "\u0E15\u0E34\u0E4A\u0E07 - \u0E15\u0E48\u0E2D\u0E07"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-    hasChoices: 1
+    hasChoices: 0
     choices:
     - "\u0E2B\u0E49\u0E2D\u0E07\u0E01\u0E34\u0E08\u0E01\u0E23\u0E23\u0E21"
     - "\u0E2B\u0E49\u0E2D\u0E07\u0E14\u0E19\u0E15\u0E23\u0E35"
@@ -4778,7 +4792,7 @@ MonoBehaviour:
     characterName: "\u0E0B\u0E34\u0E19"
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
-    hasChoices: 1
+    hasChoices: 0
     choices: []
     choiceScores: 
     choiceLeadsTo: 
@@ -4808,7 +4822,7 @@ MonoBehaviour:
       \u0E40\u0E1E\u0E23\u0E32\u0E30\u0E2D\u0E22\u0E48\u0E32\u0E07\u0E19\u0E31\u0E49\u0E19\u0E09\u0E31\u0E19\u0E08\u0E30\u0E2A\u0E37\u0E1A\u0E2B\u0E32\u0E04\u0E27\u0E32\u0E21\u0E08\u0E23\u0E34\u0E07\u0E43\u0E2B\u0E49
       !"
     characterName: "\u0E0B\u0E34\u0E19"
-    characterSprite: {fileID: 0}
+    characterSprite: {fileID: 6278055772499779983, guid: 47057c2f874dd19459f5cab810fe4a24, type: 3}
     voiceOver: {fileID: 0}
     hasChoices: 0
     choices:
@@ -4890,6 +4904,28 @@ MonoBehaviour:
   choiceTexts: []
   fadeDuration: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!95 &981473658
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981473654}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14446e7501fbb5a48a1928c551950bec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1043992975
 GameObject:
   m_ObjectHideFlags: 0
@@ -5780,12 +5816,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d6e4b44a96d1d4ebf0ae0651afec9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 768658389}
   autoFindPlayer: 1
   smoothSpeed: 0.125
   offset: {x: 0, y: 0, z: -10}
   backgrounds:
-  - {fileID: 0}
+  - {fileID: 1966538662}
 --- !u!1 &1304077903
 GameObject:
   m_ObjectHideFlags: 0
