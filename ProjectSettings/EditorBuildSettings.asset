@@ -200,6 +200,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF1attmorning1.1.unity
     guid: 9ab62f2742b38af4eafa21863676ed47
+  - enabled: 1
+    path: Assets/Main/Sence All/Day 3/End Game/Pre End.unity
+    guid: a07a7359249c1a646ab46ac9b2a3db02
+  - enabled: 1
+    path: Assets/Main/Sence All/Day 3/End Game/Good.unity
+    guid: 197d3a15558e541428863bee77f8390f
+  - enabled: 1
+    path: Assets/Main/Sence All/Day 3/End Game/VeryGood.unity
+    guid: 39f1016758ee5f94c9dc4df9b85622be
+  - enabled: 1
+    path: Assets/Main/Sence All/Day 3/End Game/Bad.unity
+    guid: 7e0652c7012de254386b4b2d5f04bec2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

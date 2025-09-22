@@ -1,253 +1,201 @@
-using TMPro;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class TextObject2D : MonoBehaviour
+public class EndDialogue : MonoBehaviour
 {
-    [Header("Text Settings")]
-    public string textContent = "Hello World";
-    public Color textColor = Color.white;
-    public int fontSize = 24;
-    public TextAlignmentOptions alignment = TextAlignmentOptions.Center;
+    [System.Serializable]
+    public class DialogueData
+    {
+        public string[] sentences;
+    }
 
-    [Header("Font Settings")]
-    public TMP_FontAsset fontAsset; // ฟอนต์ที่ต้องการใช้
-    public FontStyles fontStyle = FontStyles.Normal;
-    public bool autoSize = false;
-    public float fontSizeMin = 12f;
-    public float fontSizeMax = 36f;
+    [System.Serializable]
+    public class QuestionData
+    {
+        public string questionText;
+        public AnswerData[] answers;
+    }
 
-    [Header("Sorting Settings")]
-    public string sortingLayerName = "Default";
-    public int orderInLayer = 0;
+    [System.Serializable]
+    public class AnswerData
+    {
+        public string answerText;
+        public string targetScene;
+    }
 
-    [Header("Additional Effects")]
-    public bool enableShadow = false;
-    public Color shadowColor = new Color(0, 0, 0, 0.5f);
-    public Vector2 shadowOffset = new Vector2(2, -2);
+    [Header("UI References")]
+    public GameObject dialoguePanel;
+    public Text dialogueText;
+    public float typingSpeed = 0.05f;
 
-    public bool enableOutline = false;
-    public Color outlineColor = Color.black;
-    public float outlineWidth = 0.1f;
+    public GameObject questionPanel;
+    public GameObject answerButtonPrefab;
+    public Text questionText;
 
-    private TextMeshPro textMeshPro;
-    private GameObject textObject;
+    [Header("Dialogue Content")]
+    public DialogueData dialogueContent;
+    public QuestionData questionContent;
+
+    [Header("Interaction Settings")]
+    public float interactionRange = 2f;
+    public KeyCode interactKey = KeyCode.E;
+
+    private Queue<string> sentenceQueue;
+    private bool isDialogueRunning = false;
+    private bool isTypingInProgress = false;
+    private string currentDialogueSentence;
 
     void Start()
     {
-        CreateTextObject();
+        sentenceQueue = new Queue<string>();
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+
+        if (questionPanel != null)
+            questionPanel.SetActive(false);
     }
 
-    void CreateTextObject()
+    void Update()
     {
-        // สร้าง GameObject สำหรับข้อความ
-        textObject = new GameObject("TextObject");
-        textObject.transform.SetParent(transform);
-        textObject.transform.localPosition = Vector3.zero;
-
-        // เพิ่ม TextMeshPro component
-        textMeshPro = textObject.AddComponent<TextMeshPro>();
-
-        // ตั้งค่าฟอนต์และข้อความ
-        SetupFontAndText();
-
-        // ตั้งค่า Sorting
-        SetupTextSorting();
-
-        // ตั้งค่าเพิ่มเติม
-        textMeshPro.raycastTarget = false;
-    }
-
-    void SetupFontAndText()
-    {
-        // ตั้งค่าฟอนต์
-        if (fontAsset != null)
+        if (Input.GetKeyDown(interactKey) && !isDialogueRunning)
         {
-            textMeshPro.font = fontAsset;
-        }
-        else
-        {
-            // ใช้ฟอนต์ default ถ้าไม่ได้กำหนด
-            textMeshPro.font = Resources.Load<TMP_FontAsset>("Fonts & Materials/LiberationSans SDF");
+            FindAndInteractWithNPC();
         }
 
-        // ตั้งค่าข้อความ
-        textMeshPro.text = textContent;
-        textMeshPro.color = textColor;
-        textMeshPro.fontSize = fontSize;
-        textMeshPro.alignment = alignment;
-        textMeshPro.enableWordWrapping = false;
-        textMeshPro.fontStyle = fontStyle;
-
-        // ตั้งค่า Auto Size
-        textMeshPro.enableAutoSizing = autoSize;
-        if (autoSize)
+        if (isDialogueRunning && Input.GetKeyDown(KeyCode.Space))
         {
-            textMeshPro.fontSizeMin = fontSizeMin;
-            textMeshPro.fontSizeMax = fontSizeMax;
-        }
-
-        // ตั้งค่าเอฟเฟกต์
-        SetupTextEffects();
-    }
-
-    void SetupTextEffects()
-    {
-        // ตั้งค่า Shadow
-        if (enableShadow)
-        {
-            textMeshPro.fontMaterial.EnableKeyword("UNDERLAY_ON");
-            textMeshPro.fontMaterial.SetColor("_UnderlayColor", shadowColor);
-            textMeshPro.fontMaterial.SetFloat("_UnderlayOffsetX", shadowOffset.x);
-            textMeshPro.fontMaterial.SetFloat("_UnderlayOffsetY", shadowOffset.y);
-            textMeshPro.fontMaterial.SetFloat("_UnderlayDilate", 0.5f);
-        }
-        else
-        {
-            textMeshPro.fontMaterial.DisableKeyword("UNDERLAY_ON");
-        }
-
-        // ตั้งค่า Outline
-        if (enableOutline)
-        {
-            textMeshPro.outlineWidth = outlineWidth;
-            textMeshPro.outlineColor = outlineColor;
+            if (isTypingInProgress)
+            {
+                FinishTypingImmediately();
+            }
+            else
+            {
+                ShowNextSentence();
+            }
         }
     }
 
-    void SetupTextSorting()
+    void FindAndInteractWithNPC()
     {
-        // ใช้ Renderer ในการควบคุม Sorting
-        Renderer textRenderer = textObject.GetComponent<Renderer>();
-        if (textRenderer != null)
-        {
-            textRenderer.sortingLayerName = sortingLayerName;
-            textRenderer.sortingOrder = orderInLayer;
-        }
+        Collider2D[] nearbyObjects = Physics2D.OverlapCircleAll(transform.position, interactionRange);
 
-        // หรือใช้ Sorting Group (ถ้าต้องการ)
-        SortingGroup sortingGroup = textObject.GetComponent<SortingGroup>();
-        if (sortingGroup == null)
+        foreach (Collider2D collider in nearbyObjects)
         {
-            sortingGroup = textObject.AddComponent<SortingGroup>();
-        }
-        sortingGroup.sortingLayerName = sortingLayerName;
-        sortingGroup.sortingOrder = orderInLayer;
-    }
-
-    // เมธอดสำหรับเปลี่ยนข้อความขณะ runtime
-    public void SetText(string newText)
-    {
-        if (textMeshPro != null)
-        {
-            textMeshPro.text = newText;
+            if (collider.CompareTag("NPC"))
+            {
+                InitiateDialogue();
+                break;
+            }
         }
     }
 
-    // เมธอดสำหรับเปลี่ยนสีข้อความ
-    public void SetTextColor(Color newColor)
+    public void InitiateDialogue()
     {
-        if (textMeshPro != null)
+        isDialogueRunning = true;
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(true);
+
+        sentenceQueue.Clear();
+
+        foreach (string sentence in dialogueContent.sentences)
         {
-            textMeshPro.color = newColor;
+            sentenceQueue.Enqueue(sentence);
+        }
+
+        ShowNextSentence();
+    }
+
+    public void ShowNextSentence()
+    {
+        if (sentenceQueue.Count == 0)
+        {
+            ConcludeDialogue();
+            return;
+        }
+
+        currentDialogueSentence = sentenceQueue.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeText(currentDialogueSentence));
+    }
+
+    IEnumerator TypeText(string textToType)
+    {
+        isTypingInProgress = true;
+        dialogueText.text = "";
+
+        foreach (char character in textToType.ToCharArray())
+        {
+            dialogueText.text += character;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        isTypingInProgress = false;
+    }
+
+    void FinishTypingImmediately()
+    {
+        StopAllCoroutines();
+        dialogueText.text = currentDialogueSentence;
+        isTypingInProgress = false;
+    }
+
+    void ConcludeDialogue()
+    {
+        isDialogueRunning = false;
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+
+        DisplayQuestion();
+    }
+
+    void DisplayQuestion()
+    {
+        if (questionPanel == null || questionText == null || answerButtonPrefab == null)
+        {
+            Debug.LogError("Question UI components are missing!");
+            return;
+        }
+
+        questionPanel.SetActive(true);
+        questionText.text = questionContent.questionText;
+
+        // Remove any existing answer buttons
+        foreach (Transform child in questionPanel.transform)
+        {
+            if (child != questionText.transform)
+                Destroy(child.gameObject);
+        }
+
+        // Create new answer buttons
+        foreach (AnswerData answer in questionContent.answers)
+        {
+            GameObject newButton = Instantiate(answerButtonPrefab, questionPanel.transform);
+            newButton.GetComponentInChildren<Text>().text = answer.answerText;
+            newButton.GetComponent<Button>().onClick.AddListener(() => HandleAnswerSelection(answer.targetScene));
         }
     }
 
-    // เมธอดสำหรับเปลี่ยนฟอนต์
-    public void SetFont(TMP_FontAsset newFont)
+    void HandleAnswerSelection(string sceneToLoad)
     {
-        if (textMeshPro != null && newFont != null)
+        if (questionPanel != null)
+            questionPanel.SetActive(false);
+
+        if (!string.IsNullOrEmpty(sceneToLoad))
         {
-            textMeshPro.font = newFont;
-            fontAsset = newFont;
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 
-    // เมธอดสำหรับเปลี่ยนขนาดฟอนต์
-    public void SetFontSize(int newSize)
+    // Visualize interaction range in the editor
+    void OnDrawGizmosSelected()
     {
-        if (textMeshPro != null)
-        {
-            textMeshPro.fontSize = newSize;
-            fontSize = newSize;
-        }
-    }
-
-    // เมธอดสำหรับเปลี่ยนสไตล์ฟอนต์
-    public void SetFontStyle(FontStyles newStyle)
-    {
-        if (textMeshPro != null)
-        {
-            textMeshPro.fontStyle = newStyle;
-            fontStyle = newStyle;
-        }
-    }
-
-    // เมธอดสำหรับเปิด/ปิด Auto Size
-    public void SetAutoSize(bool enableAutoSize)
-    {
-        if (textMeshPro != null)
-        {
-            textMeshPro.enableAutoSizing = enableAutoSize;
-            autoSize = enableAutoSize;
-        }
-    }
-
-    // เมธอดสำหรับเปิด/ปิด Shadow
-    public void SetShadow(bool enable, Color? color = null, Vector2? offset = null)
-    {
-        if (textMeshPro != null)
-        {
-            enableShadow = enable;
-            if (color.HasValue) shadowColor = color.Value;
-            if (offset.HasValue) shadowOffset = offset.Value;
-
-            SetupTextEffects();
-        }
-    }
-
-    // เมธอดสำหรับเปิด/ปิด Outline
-    public void SetOutline(bool enable, Color? color = null, float? width = null)
-    {
-        if (textMeshPro != null)
-        {
-            enableOutline = enable;
-            if (color.HasValue) outlineColor = color.Value;
-            if (width.HasValue) outlineWidth = width.Value;
-
-            SetupTextEffects();
-        }
-    }
-
-    // เมธอดสำหรับรีเฟรชข้อความ (ใช้เมื่อแก้ไข properties ใน Inspector)
-    void OnValidate()
-    {
-        if (textMeshPro != null && Application.isPlaying)
-        {
-            SetupFontAndText();
-            SetupTextSorting();
-        }
-    }
-
-    // เมธอดสำหรับทำลายข้อความ
-    public void DestroyText()
-    {
-        if (textObject != null)
-        {
-            Destroy(textObject);
-            textMeshPro = null;
-        }
-    }
-
-    // เมธอดสำหรับรับ Component TextMeshPro
-    public TextMeshPro GetTextMeshPro()
-    {
-        return textMeshPro;
-    }
-
-    // เมธอดสำหรับรับ GameObject ของข้อความ
-    public GameObject GetTextObject()
-    {
-        return textObject;
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 }
