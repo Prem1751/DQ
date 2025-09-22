@@ -113,13 +113,30 @@ public class AdvancedDialogueSystem : MonoBehaviour
             audioSource.playOnAwake = false;
         }
 
-        // ตั้งค่าปุ่มตัวเลือก
-        for (int i = 0; i < choiceButtons.Length; i++)
+        // ✅ แก้ไขส่วนนี้ - ตั้งค่าปุ่มตัวเลือก
+        if (choiceButtons != null)
         {
-            int choiceIndex = i;
-            choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
+            for (int i = 0; i < choiceButtons.Length; i++)
+            {
+                int choiceIndex = i;
+
+                if (choiceButtons[i] != null)
+                {
+                    choiceButtons[i].onClick.RemoveAllListeners(); // ลบ listener เดิม
+                    choiceButtons[i].onClick.AddListener(() => OnChoiceSelected(choiceIndex));
+                }
+                else
+                {
+                    Debug.LogError($"Choice button at index {i} is null! Please assign in Inspector.", this);
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError("ChoiceButtons array is null! Please assign in Inspector.", this);
         }
     }
+
 
     private void Update()
     {
@@ -283,19 +300,31 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
     private void ShowChoices(string[] choices)
     {
+        if (choicePanel == null || choiceButtons == null || choiceTexts == null)
+        {
+            Debug.LogError("Choice UI components are not assigned!", this);
+            return;
+        }
+
         dialoguePanel.SetActive(false);
         choicePanel.SetActive(true);
 
         for (int i = 0; i < choiceButtons.Length; i++)
         {
-            if (i < choices.Length)
+            if (i < choices.Length && choiceButtons[i] != null)
             {
                 choiceButtons[i].gameObject.SetActive(true);
-                choiceTexts[i].text = choices[i];
+                if (choiceTexts[i] != null)
+                {
+                    choiceTexts[i].text = choices[i];
+                }
             }
             else
             {
-                choiceButtons[i].gameObject.SetActive(false);
+                if (choiceButtons[i] != null)
+                {
+                    choiceButtons[i].gameObject.SetActive(false);
+                }
             }
         }
     }

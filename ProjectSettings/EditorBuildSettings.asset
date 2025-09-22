@@ -200,6 +200,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 1/school/aftertest/morning/NC/NCF1attmorning1.1.unity
     guid: 9ab62f2742b38af4eafa21863676ed47
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/FlLOOR/D2F1.unity
+    guid: 3f4af9dd3cbe83e40831ee247dc7a66c
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/FlLOOR/D2F2.unity
+    guid: 4bb5f0122f8094a4282e98b8c1a32df1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
