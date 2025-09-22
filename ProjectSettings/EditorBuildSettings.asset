@@ -206,6 +206,30 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Sence All/day 2/D2school/FlLOOR/D2F2.unity
     guid: 4bb5f0122f8094a4282e98b8c1a32df1
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/Bath/BathF2right.unity
+    guid: 89ba4a148bc897a4089dad6b88a4c818
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/FlLOOR/D3F2.unity
+    guid: b7203e53ab6bb54488aff69cfc8a1491
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/Information/Infor.unity
+    guid: 57e50b61355d5d1419252a06e90ecec0
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/Musicroom/music/music.unity
+    guid: d2367c55c98674842992020b0dc8ae7c
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/ActiviiteRoom/D2Activity.unity
+    guid: 92661253142a38c42856bb673b29b817
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/ActiviiteRoom/D2Activity2.unity
+    guid: 4291f0fdf47c20d4d8f38188af8b0913
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/COmputer/compu1.unity
+    guid: bb577794e0ff2ad43b25f7974b3b3741
+  - enabled: 1
+    path: Assets/Main/Sence All/day 2/D2school/ROOM/Storageroom/storage.unity
+    guid: b296e88f2f8454d4fa846a2fd525e8ec
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 36068293}
   - component: {fileID: 36068292}
   - component: {fileID: 36068291}
+  - component: {fileID: 36068294}
   m_Layer: 0
   m_Name: "\u0E44\u0E2D\u0E23\u0E34\u0E19"
   m_TagString: Untagged
@@ -317,13 +318,13 @@ MonoBehaviour:
     choiceScores: 
     choiceLeadsTo: 
     postChoiceDialogue: 
-    changeSceneAfterThisLine: 0
-    sceneNameToLoad: 
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: D2Activity2
     sceneTransitionDelay: 0
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
-  interactionRadius: 2
+  interactionRadius: 3
   interactKey: 101
   typingSpeed: 0.05
   useTypingEffect: 1
@@ -380,7 +381,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -408,6 +409,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &36068294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36068290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c93c62fec6ad4341a3491dff3d40fe8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightPrefab: {fileID: 3201293527369545982, guid: 5c9cabab458e823449bf2a7849623666, type: 3}
+  activationDistance: 20
+  destroyWhenFar: 1
+  sortingLayerName: Default
+  orderInLayer: -1
 --- !u!1 &760045471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1343,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites:
@@ -1391,7 +1411,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

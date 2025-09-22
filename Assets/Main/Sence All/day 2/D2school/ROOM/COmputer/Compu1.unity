@@ -504,7 +504,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites:
@@ -570,7 +572,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1966,9 +1968,8 @@ MonoBehaviour:
     useScoreBasedTransition: 0
     requiredScore: 0
     scoreBasedSceneName: 
-  - text: "\u0E21\u0E35\u0E2B\u0E19\u0E31\u0E07\u0E22\u0E32\u0E07\u0E21\u0E31\u0E14\u0E1C\u0E21\u0E2A\u0E35\u0E0A\u0E21\u0E1E\u0E39
-      \u0E15\u0E01\u0E2D\u0E22\u0E39\u0E48\u0E1A\u0E19\u0E17\u0E35\u0E48\u0E19\u0E31\u0E48\u0E07\r"
-    characterName: ...
+  - text: "\u0E01\u0E14  F \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E40\u0E01\u0E47\u0E1A\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19"
+    characterName: TIP
     characterSprite: {fileID: 0}
     voiceOver: {fileID: 0}
     hasChoices: 0
@@ -1978,6 +1979,54 @@ MonoBehaviour:
     postChoiceDialogue: 
     changeSceneAfterThisLine: 0
     sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2B\u0E49\u0E2D\u0E07\u0E19\u0E36\u0E49\u0E21\u0E35\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19
+      3 \u0E0A\u0E34\u0E49\u0E19 (\u0E40\u0E01\u0E47\u0E1A 3 \u0E04\u0E23\u0E31\u0E49\u0E07)"
+    characterName: TIP
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E2B\u0E32\u0E01\u0E15\u0E49\u0E2D\u0E07\u0E01\u0E32\u0E23\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07\u0E43\u0E2B\u0E49\u0E01\u0E14\u0E17\u0E35\u0E48\u0E19\u0E35\u0E48\u0E2D\u0E35\u0E01\u0E04\u0E23\u0E31\u0E49\u0E07"
+    characterName: TIP
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices:
+    - "\u0E40\u0E01\u0E47\u0E1A\u0E2B\u0E25\u0E31\u0E01\u0E10\u0E32\u0E19\u0E01\u0E48\u0E2D\u0E19"
+    - "\u0E2D\u0E01\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07"
+    choiceScores: 
+    choiceLeadsTo: ffffffff0d000000
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 0
+    sceneNameToLoad: 
+    sceneTransitionDelay: 0
+    useScoreBasedTransition: 0
+    requiredScore: 0
+    scoreBasedSceneName: 
+  - text: "\u0E01\u0E33\u0E25\u0E31\u0E07\u0E2D\u0E2D\u0E01\u0E08\u0E32\u0E01\u0E2B\u0E49\u0E2D\u0E07...."
+    characterName: TIP
+    characterSprite: {fileID: 0}
+    voiceOver: {fileID: 0}
+    hasChoices: 0
+    choices: []
+    choiceScores: 
+    choiceLeadsTo: 
+    postChoiceDialogue: 
+    changeSceneAfterThisLine: 1
+    sceneNameToLoad: D2F1
     sceneTransitionDelay: 0
     useScoreBasedTransition: 0
     requiredScore: 0
@@ -2043,7 +2092,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

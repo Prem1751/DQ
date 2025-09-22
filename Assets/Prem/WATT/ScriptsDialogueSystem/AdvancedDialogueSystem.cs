@@ -300,9 +300,9 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
     private void ShowChoices(string[] choices)
     {
-        if (choicePanel == null || choiceButtons == null || choiceTexts == null)
+        if (choices == null || choices.Length == 0)
         {
-            Debug.LogError("Choice UI components are not assigned!", this);
+            Debug.LogError("No choices available!");
             return;
         }
 
@@ -331,15 +331,26 @@ public class AdvancedDialogueSystem : MonoBehaviour
 
     private void OnChoiceSelected(int choiceIndex)
     {
+        // ตรวจสอบความถูกต้องของ choiceIndex
+        DialogueLine currentLine = dialogueLines[currentLineIndex];
+
+        if (choiceIndex < 0 || choiceIndex >= currentLine.choices.Length)
+        {
+            Debug.LogError($"Invalid choice index: {choiceIndex}. Choices available: {currentLine.choices.Length}");
+            return;
+        }
+
         lastChoiceIndex = choiceIndex;
         choicePanel.SetActive(false);
 
-        DialogueLine currentLine = dialogueLines[currentLineIndex];
-
-        // เพิ่มคะแนนถ้ามี
-        if (choiceIndex < currentLine.choiceScores.Length)
+        // เพิ่มคะแนนถ้ามี และตรวจสอบขอบเขตของ array
+        if (currentLine.choiceScores != null && choiceIndex < currentLine.choiceScores.Length)
         {
             GameManager.Instance?.AddScore(currentLine.choiceScores[choiceIndex]);
+        }
+        else
+        {
+            Debug.LogWarning($"Choice scores array is null or index {choiceIndex} is out of range.");
         }
 
         // ตรวจสอบว่ามีบทสนทนาหลังเลือกหรือไม่
@@ -357,8 +368,7 @@ public class AdvancedDialogueSystem : MonoBehaviour
         }
 
         // ตรวจสอบว่ามีการกำหนดบรรทัดต่อไปหรือไม่
-        if (currentLine.choiceLeadsTo != null &&
-            choiceIndex < currentLine.choiceLeadsTo.Length)
+        if (currentLine.choiceLeadsTo != null && choiceIndex < currentLine.choiceLeadsTo.Length)
         {
             int nextLine = currentLine.choiceLeadsTo[choiceIndex];
 
@@ -374,6 +384,14 @@ public class AdvancedDialogueSystem : MonoBehaviour
                 DisplayLine(dialogueLines[currentLineIndex]);
                 return;
             }
+            else
+            {
+                Debug.LogError($"Invalid next line index: {nextLine}. Dialogue lines available: {dialogueLines.Length}");
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"Choice leads to array is null or index {choiceIndex} is out of range.");
         }
 
         // ไม่มีอะไรกำหนด - ไปบรรทัดต่อไป
