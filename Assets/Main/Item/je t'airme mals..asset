@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: je t'airme mals.
   m_EditorClassIdentifier: 
   itemName: '"je t''airme mals".'
-  icon: {fileID: -3203163427453090683, guid: 92e7a35e9c2929d419fd71157108ed1d, type: 3}
-  description: '"je t''airme mals".
-
-'
+  icon: {fileID: -3203163427453090683, guid: f55c8af316dfd7242abaf8f35acc5141, type: 3}
+  description: "\u0E42\u0E19\u0E49\u0E15\u0E1B\u0E23\u0E34\u0E28\u0E19\u0E32\u0E43\u0E19\u0E2B\u0E49\u0E2D\u0E07\u0E14\u0E19\u0E15\u0E23\u0E35\u0E02\u0E2D\u0E07\u0E44\u0E2D\u0E23\u0E34\u0E19"
