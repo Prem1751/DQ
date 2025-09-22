@@ -696,7 +696,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1830920297
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 8512312652041124779, guid: d0552a2dab9da9c499d8bb6634ccc6c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -926,7 +926,9 @@ MonoBehaviour:
   idleBool: IsIdle
   walkBool: IsWalking
   runBool: IsRunning
+  attackBool: IsAttacking
   speedParam: Speed
+  directionParam: Direction
   flipSprite: 1
   runParticles: {fileID: 0}
   backgroundSprites: []
@@ -991,7 +993,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 369120345
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1467,8 +1469,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 1320007948}
   - {fileID: 333478762}
-  - {fileID: 854047815}
   - {fileID: 827466491}
+  - {fileID: 854047815}
   - {fileID: 691764850}
   - {fileID: 641791419}
   - {fileID: 218151603}
